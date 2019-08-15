@@ -83,13 +83,88 @@
 		function dbgLog(aString) {
 	    if (isDevelopment) { console.log(aString); }
 		}
+	</script>
+	<!-- Amplitude helper functionality -->
+	<script>
+		const simpleIdSystemVersion = "1.0.0"
+		amplitude.getInstance().setVersionName(simpleIdSystemVersion)
 		//
-		function logNavigate() {
+		let lastPageVisited = getPageName()
+		//
+		// Returns the page name (i.e. reference / anchor on the site). For example,
+		// if the URL is .../index.html#cheese, this returns #cheese.
+		//
+		function getPageName() {
+			const pageName = window.location.hash
+			return (!pageName) ? '#home' : pageName
+		}
+		//
+		// Listen for & identify navigation changes
+		//
+		document.onmouseover = function() {
+      window.innerDocClick = true		// User's mouse is inside the page.
+    }
+    //
+    document.onmouseleave = function() {
+      window.innerDocClick = false	// User's mouse has left the page.
+    }
+    //
+    window.addEventListener('hashchange', function(event) {
+      const page = getPageName()
+			const eventProperties = {
+				'previousPage': lastPageVisited,
+				'trigger': (window.innerDocClick ? 'site content' : 'browser button')
+			}
+      var eventName = `${page} Visited`
+			logNavigate(page, eventProperties)
 
+			lastPageVisited = page
+    }, false);
+		//
+		// Log the unloading of our page
+		window.onunload = function() {
+			const eventProperties = {
+				'page': getPageName()
+			}
+			amplitude.getInstance().logEvent('Site exited', eventProperties)
+		}
+		//
+		function logNavigate(page='', eventProperties={}) {
+			if (page) {
+				dbgLog(`logNavigate page=${page}`)
+				amplitude.getInstance().logEvent(`${page} visited.`, eventProperties)
+			}
+		}
+		//
+		function logButton(buttonName) {
+			logClick(`${buttonName} button pressed`)
+		}
+		//
+		function logLink(linkName) {
+			logClick(`${linkName} link clicked`)
+		}
+		//
+		function logClick(clickEventName, eventProperties={}) {
+			if (clickEventName) {
+				eventProperties['page'] = getPageName()
+				dbgLog(`logClick: ${clickEventName}, ${getPageName()}`)
+				amplitude.getInstance().logEvent(clickEventName, eventProperties)
+			}
 		}
 		//
 		function logPageLoad() {
-			dbgLog(`Amplitude: isDevelopment=${isDevelopment}, amplitudeKey=${amplitudeKey}`)
+			logNavigate(getPageName())
+
+			try {
+				const urlString = window.location.href
+				const url = new URL(urlString)
+				const tCode = url.searchParams.get('t')
+				if (tCode) {
+					dbgLog(`logPageLoad found tCode ${tCode}`)
+					const identity = new amplitude.Identify().set('tCode', tCode)
+					amplitude.getInstance().identify(identify)
+				}
+			} catch (suppressedError) {}
 		}
 		//
 		logPageLoad()
@@ -171,15 +246,15 @@
 <!-- Panel Top #library/panel/panel-top-01.html -->
 <nav class="panel top white hideOnScroll">
   <div class="sections desktop">
-    <div class="left"><a href="#" title="SimpleID"><svg style="width:164px;height:32px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+    <div class="left"><a href="#" onclick="logButton('header Logo')" title="SimpleID"><svg style="width:164px;height:32px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
     <div class="right">
-			<a class="button gradient" style="background-color:#6e5494" href="https://github.com/simplesecure" target="_blank"><i class="fa fa-github" style="font-size:24px;"></i></a>
-			<a class="button gradient" style="background-color:#00aced" href="http://twitter.com/simpleidxyz" target="_blank"><i class="fa fa-twitter" style="font-size:24px;"></i></a>
+			<a class="button gradient" onclick="logButton('header Github')" style="background-color:#6e5494" href="https://github.com/simplesecure" target="_blank"><i class="fa fa-github" style="font-size:24px;"></i></a>
+			<a class="button gradient" onclick="logButton('header Twitter')" style="background-color:#00aced" href="http://twitter.com/simpleidxyz" target="_blank"><i class="fa fa-twitter" style="font-size:24px;"></i></a>
     </div>
   </div>
   <div class="sections compact hidden">
-    <div class="left"><a href="#" title="Slides Framework"><svg style="width:164px;height:32px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
-    <div class="right"><a href="http://twitter.com/simpleidxyz" class="trimRight" target="_blank"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></div>
+    <div class="left"><a href="#" onclick="logButton('header logo')" title="Slides Framework"><svg style="width:164px;height:32px;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a></div>
+    <div class="right"><a href="http://twitter.com/simpleidxyz" onclick="logButton('header twitter')" class="trimRight" target="_blank"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></div>
   </div>
 </nav>
 
@@ -223,8 +298,8 @@
                 <span id="typed"></span>
 							</h1>
               <p class="ae-2 fromLeft"><span class="opacity-8">Privacy, security, and convenience all rolled into one simple developer experience. Social authentication is simple, but far from private. Give your users simplicity while protecting their privacy with SimpleID.</span></p>
-              <a class="button blue gradient ae-3 fromCenter cropLeft" href="#flow">Learn More</a>
-							<a class="button white ae-4 fromCenter" href="https://www.simpleid.xyz/demo" target="_blank">Try Demo</a>
+              <a class="button blue gradient ae-3 fromCenter cropLeft" href="#flow" onclick="logButton('Learn More')">Learn More</a>
+							<a class="button white ae-4 fromCenter" href="https://www.simpleid.xyz/demo" onclick="logButton('Try Demo')" target="_blank">Try Demo</a>
             </li>
             <li class="col-6-12">
 							<!-- <svg width="640" height="640"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconLogo"></use></svg> -->
@@ -289,8 +364,8 @@
                 </li>
                 <li class="col-6-12 ae-6">
 									<h3 class="margin-top-3"></h3>
-									<a class="button blue gradient ae-3 fromCenter cropLeft" href="#pricing">Sign Up</a>
-									<a class="button white ae-4 fromCenter" href="https://docs.simpleid.xyz" target="_blank">Read Docs</a>
+									<a class="button blue gradient ae-3 fromCenter cropLeft" onclick="logButton('Sign Up')" href="#pricing">Sign Up</a>
+									<a class="button white ae-4 fromCenter" href="https://docs.simpleid.xyz" onclick="logButton('Read Docs')" target="_blank">Read Docs</a>
                 </li>
               </ul>
             </li>
@@ -332,7 +407,7 @@
 									<li class="opacity-7">500 users</li>
                 </ul>
               </div>
-							<a href="https://app.simpleid.xyz" target="_blank" class="button blue gradient wide cropSides cropBottom ae-9">Free Trial</a>
+							<a href="https://app.simpleid.xyz" onclick="logButton('Free Trial')" target="_blank" class="button blue gradient wide cropSides cropBottom ae-9">Free Trial</a>
             </li>
             <li class="col-4-12 ae-4" style="background: #c0cfff">
               <h2>Developer</h2>
@@ -348,7 +423,7 @@
                   <li class="opacity-8">10,000 users</li>
                 </ul>
               </div>
-							<a href="https://app.simpleid.xyz" target="_blank" class="button white gradient wide cropSides cropBottom ae-9">Sign Up</a>
+							<a href="https://app.simpleid.xyz" onclick="logButton('Sign Up')" target="_blank" class="button white gradient wide cropSides cropBottom ae-9">Sign Up</a>
             </li>
             <li class="col-4-12 ae-5">
               <h2>Enterprise</h2>
@@ -365,7 +440,7 @@
                   <li class="opacity-8">100,000 users</li>
                 </ul>
               </div>
-              <a href="mailto:simpleid.xyz@gmail.com" class="button blue gradient wide cropSides cropBottom ae-9">Contact Us</a>
+              <a href="mailto:simpleid.xyz@gmail.com" onclick="logButton('Contact Us')" class="button blue gradient wide cropSides cropBottom ae-9">Contact Us</a>
             </li>
           </ul>
         </div>
@@ -382,7 +457,7 @@
       <span class="opacity-8">
         <a href="#Home"
            title="SimpleID"
-           onclick="logLogoPress()">
+           onclick="logButton('Footer Logo')">
           <svg style="width:150px;height:25px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
         </a>
       </span>
@@ -391,17 +466,17 @@
       <ul class="menu uppercase trim">
         <li>&copy; 2019 Stealthy Inc.</li>
         <li><a href="https://termsfeed.com/terms-conditions/8368d309d9e9f77e5a591212a88f6bbf"
-               onclick="logFooterPress(this)"
+               onclick="logLink('Footer Terms & Conditions')"
                target="_blank">Terms & Conditions</a></li>
         <li><a href="https://termsfeed.com/privacy-policy/997ddbd8f78bb8bd5e99dbcfa730ef09"
-               onclick="logFooterPress(this)"
+               onclick="logLink('Footer Privacy Policy')"
                target="_blank">Privacy Policy</a></li>
         <li><a href="mailto:simpleid.xyz@gmail.com"
-               onclick="logFooterPress(this)">Contact Us</a></li>
+               onclick="logLink('Footer Contact Us')">Contact Us</a></li>
         <li class="cropRight">
           <a href="http://twitter.com/simpleidxyz"
              class="trimRight"
-             onclick="logFooterPress(this)"
+             onclick="logButton('Footer Twitter')"
              target="_blank"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a>
         </li>
       </ul>
@@ -409,7 +484,7 @@
   </div>
   <div class="sections compact hidden">
     <div class="left">
-      <a href="#" title="SimpleID"><svg style="width:82px;height:24px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a>
+      <a href="#" onclick="logButton('Footer Logo')" title="SimpleID"><svg style="width:82px;height:24px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg></a>
     </div>
     <div class="right">
       <span class="button actionButton sidebarTrigger" data-sidebar-id="1"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg></span>
