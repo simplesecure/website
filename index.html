@@ -159,12 +159,15 @@
 				const urlString = window.location.href
 				const url = new URL(urlString)
 				const tCode = url.searchParams.get('t')
+
 				if (tCode) {
 					dbgLog(`logPageLoad found tCode ${tCode}`)
 					const identity = new amplitude.Identify().set('tCode', tCode)
-					amplitude.getInstance().identify(identify)
+					amplitude.getInstance().identify(identity)
 				}
-			} catch (suppressedError) {}
+			} catch (suppressedError) {
+				console.log(`tCode - suppressedError: ${suppressedError}`)
+			}
 		}
 		//
 		logPageLoad()
