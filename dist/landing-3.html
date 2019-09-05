@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Jumpstart SaaS App & Software Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bootstrap HTML template and UI kit by Medium Rare">
+    <!-- Begin loading animation -->
+    <link href="assets/css/loaders/loader-pulse.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- End loading animation -->
+    <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,600,700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="loader">
+      <div class="loading-animation"></div>
+    </div>
+    <!-- <div class="alert alert-dismissible d-none d-md-block bg-primary-3 text-white py-4 py-md-3 px-0 mb-0 rounded-0 border-0">
+    <div class="container">
+        <div class="row no-gutters align-items-md-center justify-content-center">
+            <div class="col-lg-11 col-md d-flex flex-column flex-md-row align-items-md-center justify-content-lg-center">
+                <div class="mb-3 mb-md-0"><strong>Intro Sale</strong> $10 per license for Jumpstart's launch. Act fast, ends soon.</div>
+                <a class="btn btn-sm btn-success ml-md-3" target="_blank" href=#>Redeem Offer</a>
+            </div>
+            <div class="col-auto position-absolute right">
+                <button type="button" class="close p-0 position-relative" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">
+                        <img src="assets/img/icons/interface/icon-x.svg" alt="Close" class="icon icon-sm bg-white" data-inject-svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div> -->
+    <div class="navbar-container bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light" data-sticky="top">
+        <div class="container">
+          <a class="navbar-brand navbar-brand-dynamic-color fade-page" href="index.html">
+            <img alt="Jumpstart" data-inject-svg src="assets/img/logos/jumpstart.svg">
+          </a>
+          <div class="d-flex align-items-center order-lg-3">
+            <a href="#" class="btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3">Purchase Now</a>
+            <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+              <img alt="Navbar Toggler Open Icon" class="navbar-toggler-open icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-menu.svg">
+              <img alt="Navbar Toggler Close Icon" class="navbar-toggler-close icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-x.svg">
+            </button>
+          </div>
+          <div class="collapse navbar-collapse order-3 order-lg-2 justify-content-lg-end" id="navigation-menu">
+            <ul class="navbar-nav my-3 my-lg-0">
+              <li class="nav-item">
+                <div class="dropdown">
+                  <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link nav-item arrow-bottom" data-toggle="dropdown-grid" href="#" role="button">Demos</a>
+                  <div class="row dropdown-menu">
+                    <div class="col-auto" data-dropdown-content>
+                      <div class="dropdown-grid-menu"><a href="index.html" class="dropdown-item fade-page">Overview</a><a href="landing-1.html" class="dropdown-item fade-page">Landing 1</a><a href="landing-2.html" class="dropdown-item fade-page">Landing 2</a><a href="landing-3.html"
+                        class="dropdown-item fade-page">Landing 3</a><a href="landing-4.html" class="dropdown-item fade-page">Landing 4</a><a href="landing-5.html" class="dropdown-item fade-page">Landing 5</a><a href="landing-6.html" class="dropdown-item fade-page">Landing 6</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="dropdown">
+                  <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link nav-item arrow-bottom" data-toggle="dropdown-grid" href="#" role="button">Pages</a>
+                  <div class="row dropdown-menu">
+                    <div class="col-auto" data-dropdown-content>
+                      <div class="dropdown-grid-menu">
+                        <div class="dropdown">
+                          <a aria-expanded="false" aria-haspopup="true" class="dropdown-item" data-toggle="dropdown-grid" href="#" role="button">Company</a>
+                          <div class="row dropdown-menu">
+                            <div class="col-auto" data-dropdown-content>
+                              <div class="dropdown-grid-menu"><a href="company-about-1.html" class="dropdown-item fade-page">About 1</a><a href="company-about-2.html" class="dropdown-item fade-page">About 2</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="dropdown">
+                          <a aria-expanded="false" aria-haspopup="true" class="dropdown-item" data-toggle="dropdown-grid" href="#" role="button">Blog</a>
+                          <div class="row dropdown-menu">
+                            <div class="col-auto" data-dropdown-content>
+                              <div class="dropdown-grid-menu"><a href="blog-listing-1.html" class="dropdown-item fade-page">Blog Listing 1</a><a href="blog-listing-2.html" class="dropdown-item fade-page">Blog Listing 2</a><a href="blog-listing-3.html" class="dropdown-item fade-page">Blog Listing 3</a>
+                                <a
+                                href="blog-article.html" class="dropdown-item fade-page">Blog Article</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="dropdown">
+                          <a aria-expanded="false" aria-haspopup="true" class="dropdown-item" data-toggle="dropdown-grid" href="#" role="button">Help Center</a>
+                          <div class="row dropdown-menu">
+                            <div class="col-auto" data-dropdown-content>
+                              <div class="dropdown-grid-menu"><a href="help-center-home.html" class="dropdown-item fade-page">Help Center Home</a><a href="help-center-category.html" class="dropdown-item fade-page">Help Center Category</a><a href="help-center-article.html" class="dropdown-item fade-page">Help Center Article</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="dropdown">
+                          <a aria-expanded="false" aria-haspopup="true" class="dropdown-item" data-toggle="dropdown-grid" href="#" role="button">Careers</a>
+                          <div class="row dropdown-menu">
+                            <div class="col-auto" data-dropdown-content>
+                              <div class="dropdown-grid-menu"><a href="careers-1.html" class="dropdown-item fade-page">Careers 1</a><a href="careers-2.html" class="dropdown-item fade-page">Careers 2</a><a href="career-single.html" class="dropdown-item fade-page">Career Single</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="dropdown">
+                          <a aria-expanded="false" aria-haspopup="true" class="dropdown-item" data-toggle="dropdown-grid" href="#" role="button">Case Studies</a>
+                          <div class="row dropdown-menu">
+                            <div class="col-auto" data-dropdown-content>
+                              <div class="dropdown-grid-menu"><a href="case-studies.html" class="dropdown-item fade-page">Case Studies</a><a href="case-study-single.html" class="dropdown-item fade-page">Case Study Single</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="dropdown">
+                          <a aria-expanded="false" aria-haspopup="true" class="dropdown-item" data-toggle="dropdown-grid" href="#" role="button">Pricing</a>
+                          <div class="row dropdown-menu">
+                            <div class="col-auto" data-dropdown-content>
+                              <div class="dropdown-grid-menu"><a href="pricing-plans.html" class="dropdown-item fade-page">Pricing Plans</a><a href="pricing-table.html" class="dropdown-item fade-page">Pricing Table</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="dropdown">
+                          <a aria-expanded="false" aria-haspopup="true" class="dropdown-item" data-toggle="dropdown-grid" href="#" role="button">Contact</a>
+                          <div class="row dropdown-menu">
+                            <div class="col-auto" data-dropdown-content>
+                              <div class="dropdown-grid-menu"><a href="contact.html" class="dropdown-item fade-page">Contact</a><a href="contact-map.html" class="dropdown-item fade-page">Contact Map</a><a href="contact-planner.html" class="dropdown-item fade-page">Contact Planner</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="dropdown">
+                          <a aria-expanded="false" aria-haspopup="true" class="dropdown-item" data-toggle="dropdown-grid" href="#" role="button">Account</a>
+                          <div class="row dropdown-menu">
+                            <div class="col-auto" data-dropdown-content>
+                              <div class="dropdown-grid-menu"><a href="account-settings.html" class="dropdown-item fade-page">Account Settings</a><a href="account-invoice.html" class="dropdown-item fade-page">Invoice</a><a href="account-sign-up-cover.html" class="dropdown-item fade-page">Sign Up - Cover</a>
+                                <a
+                                href="account-sign-in-cover.html" class="dropdown-item fade-page">Sign In - Cover</a><a href="account-sign-up-simple.html" class="dropdown-item fade-page">Sign Up - Simple</a><a href="account-sign-in-simple.html" class="dropdown-item fade-page">Sign In - Simple</a><a href="account-forgot-password.html"
+                                  class="dropdown-item fade-page">Forgot Password</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="dropdown">
+                          <a aria-expanded="false" aria-haspopup="true" class="dropdown-item" data-toggle="dropdown-grid" href="#" role="button">Utility</a>
+                          <div class="row dropdown-menu">
+                            <div class="col-auto" data-dropdown-content>
+                              <div class="dropdown-grid-menu"><a href="utility-coming-soon-subscribe.html" class="dropdown-item fade-page">Coming Soon Subscribe</a><a href="utility-coming-soon-countdown.html" class="dropdown-item fade-page">Coming Soon Countdown</a><a href="utility-coming-soon-social.html"
+                                class="dropdown-item fade-page">Coming Soon Social</a><a href="utility-legal-terms.html" class="dropdown-item fade-page">Legal Terms</a><a href="404.html" class="dropdown-item fade-page">404</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="dropdown">
+                  <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link nav-item arrow-bottom" data-toggle="dropdown-grid" href="#" role="button">Features</a>
+                  <div class="row dropdown-menu">
+                    <div class="col-auto" data-dropdown-content>
+                      <div class="dropdown-grid-menu"><a href="style-guide.html" class="dropdown-item fade-page">Style Guide</a><a href="plugins.html" class="dropdown-item fade-page">Plugins</a><a href="navigation-bars.html" class="dropdown-item fade-page">Navigation Bars</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="dropdown">
+                  <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link nav-item arrow-bottom" data-toggle="dropdown-grid" href="#" role="button">Support</a>
+                  <div class="row dropdown-menu">
+                    <div class="col-auto" data-dropdown-content>
+                      <div class="dropdown-grid-menu"><a href="documentation/index.html" class="dropdown-item" target="_blank">Documentation</a><a href="documentation/changelog.html" class="dropdown-item" target="_blank">Changelog</a><a href="https://mediumrare.ticksy.com/" class="dropdown-item"
+                        target="_blank">Get Help</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <section class="bg-light pb-0 o-hidden">
+      <div class="container">
+        <div class="row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
+          <div class="col-md-9 col-lg-6 col-xl-5 mb-4 mb-lg-0 pr-lg-5 pr-xl-0">
+            <div data-aos="fade-in" data-aos-delay="250">
+              <h1 class="display-3">Build <mark data-aos="highlight-text" data-aos-delay="500">snappy landing</mark> pages</h1>
+              <p class="lead">Launch your SaaS in style with this suite of carefully crafted pages and components.
+              </p>
+              <div class="mt-4 mt-md-5">
+                <form class="d-flex flex-column flex-md-row">
+                  <input class="form-control form-control-lg h-100" type="email" name="get-started-email" placeholder="Email Address">
+                  <button class="btn btn-lg btn-primary mt-2 mt-md-0 ml-md-3 flex-shrink-0" type="submit">Get Started</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9 col-lg-6" data-aos="fade-left">
+            <img src="assets/img/illustrations/illustration-1.svg" alt="Image" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-light pb-0 pt-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-auto">
+            <ul class="list-unstyled d-flex flex-wrap justify-content-center mb-0">
+              <li class="my-3 mx-3 mx-lg-4">
+                <img src="assets/img/logos/brand/aven.svg" alt="Aven company logo" class="opacity-50" data-inject-svg>
+              </li>
+              <li class="my-3 mx-3 mx-lg-4">
+                <img src="assets/img/logos/brand/asgardia.svg" alt="Asgardia company logo" class="opacity-50" data-inject-svg>
+              </li>
+              <li class="my-3 mx-3 mx-lg-4">
+                <img src="assets/img/logos/brand/kanba.svg" alt="Kanba company logo" class="opacity-50" data-inject-svg>
+              </li>
+              <li class="my-3 mx-3 mx-lg-4">
+                <img src="assets/img/logos/brand/treva.svg" alt="Treva company logo" class="opacity-50" data-inject-svg>
+              </li>
+              <li class="my-3 mx-3 mx-lg-4">
+                <img src="assets/img/logos/brand/ztos.svg" alt="Ztos company logo" class="opacity-50" data-inject-svg>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="divider divider-bottom bg-white mt-5"></div>
+    </section>
+    <section class="o-hidden">
+      <div class="container">
+        <div class="row align-items-center justify-content-around text-center text-lg-left">
+          <div class="col-md-9 col-lg-6 col-xl-5 mb-4 mb-md-5 mb-lg-0 pl-lg-5 pl-xl-0">
+            <div>
+              <div class="alert bg-secondary rounded-lg d-inline-block mb-4">
+                <div class="d-flex align-items-center">
+                  <div class="badge badge-pill badge-success">New</div>
+                  <div class="mx-3">Announce a great new feature</div>
+                </div>
+              </div>
+              <h3 class="h1">Everything you’ll need to launch your site</h3>
+              <p class="lead">Ned ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.</p>
+              <a href="#" class="lead">Explore More</a>
+            </div>
+          </div>
+          <div class="col-md-9 col-lg-6 col-xl-5">
+            <img src="assets/img/illustrations/illustration-2.svg" alt="Image" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="o-hidden p-0">
+      <div class="container">
+        <div class="row align-items-center justify-content-around text-center text-lg-left">
+          <div class="col-md-9 col-lg-6 col-xl-5 mb-4 mb-md-5 mb-lg-0 order-lg-2 pl-lg-5 pl-xl-0">
+            <div>
+              <h2 class="h1">Save tons on design and development</h2>
+              <p class="lead">Berspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+            </div>
+            <div class="d-flex flex-wrap justify-content-center justify-content-lg-start">
+              <div class="mb-3 mr-4 ml-lg-0 mr-lg-4" data-aos="fade-left" data-aos-delay="100">
+                <div class="d-flex align-items-center">
+                  <div class="rounded-circle bg-success-alt">
+                    <img src="assets/img/icons/interface/icon-check.svg" alt="Binoculars icon" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                  </div>
+                  <h6 class="mb-0 ml-3">Fully Responsive</h6>
+                </div>
+              </div>
+              <div class="mb-3 mr-4 ml-lg-0 mr-lg-4" data-aos="fade-left" data-aos-delay="200">
+                <div class="d-flex align-items-center">
+                  <div class="rounded-circle bg-success-alt">
+                    <img src="assets/img/icons/interface/icon-check.svg" alt="Layouts icon" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                  </div>
+                  <h6 class="mb-0 ml-3">Multiple Layouts</h6>
+                </div>
+              </div>
+              <div class="mb-3 mr-4 ml-lg-0 mr-lg-4" data-aos="fade-left" data-aos-delay="300">
+                <div class="d-flex align-items-center">
+                  <div class="rounded-circle bg-success-alt">
+                    <img src="assets/img/icons/interface/icon-check.svg" alt="Box icon" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                  </div>
+                  <h6 class="mb-0 ml-3">Modular Components</h6>
+                </div>
+              </div>
+              <div class="mb-3 mr-4 ml-lg-0 mr-lg-4" data-aos="fade-left" data-aos-delay="400">
+                <div class="d-flex align-items-center">
+                  <div class="rounded-circle bg-success-alt">
+                    <img src="assets/img/icons/interface/icon-check.svg" alt="Lightning icon" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                  </div>
+                  <h6 class="mb-0 ml-3">Suits Your Style</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9 col-lg-6 col-xl-5 order-lg-1">
+            <img src="assets/img/illustrations/illustration-3.svg" alt="Image" class="img-fluid">
+          </div>
+        </div>
+      </div>
+      <div class="divider divider-bottom bg-light"></div>
+    </section>
+    <section class="bg-light">
+      <div class="container">
+        <div class="row section-title justify-content-center text-center">
+          <div class="col-md-9 col-lg-8 col-xl-7">
+            <h3 class="display-4"><mark data-aos='highlight-text' data-aos-delay='500'>Do more</mark> with Jumpstart</h3>
+            <div class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.</div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col d-flex flex-wrap justify-content-center">
+            <div class="m-2">
+              <div class="media rounded align-items-center pl-3 pr-4 pl-md-4 pr-md-5 py-2 bg-white">
+                <img src="assets/img/icons/theme/navigation/route.svg" alt="Binoculars icon" class="icon mr-3 bg-primary" data-inject-svg>
+                <h5 class="mb-0">Fully Responsive</h5>
+              </div>
+            </div>
+            <div class="m-2">
+              <div class="media rounded align-items-center pl-3 pr-4 pl-md-4 pr-md-5 py-2 bg-white">
+                <img src="assets/img/icons/theme/layout/layout-left-panel-2.svg" alt="Layouts icon" class="icon mr-3 bg-primary" data-inject-svg>
+                <h5 class="mb-0">Multiple Layouts</h5>
+              </div>
+            </div>
+            <div class="m-2">
+              <div class="media rounded align-items-center pl-3 pr-4 pl-md-4 pr-md-5 py-2 bg-white">
+                <img src="assets/img/icons/theme/shopping/box-2.svg" alt="Box icon" class="icon mr-3 bg-primary" data-inject-svg>
+                <h5 class="mb-0">Modular Components</h5>
+              </div>
+            </div>
+            <div class="m-2">
+              <div class="media rounded align-items-center pl-3 pr-4 pl-md-4 pr-md-5 py-2 bg-white">
+                <img src="assets/img/icons/theme/general/thunder-move.svg" alt="Lightning icon" class="icon mr-3 bg-primary" data-inject-svg>
+                <h5 class="mb-0">Suits Your Style</h5>
+              </div>
+            </div>
+            <div class="m-2">
+              <div class="media rounded align-items-center pl-3 pr-4 pl-md-4 pr-md-5 py-2 bg-white">
+                <img src="assets/img/icons/theme/general/bookmark.svg" alt="Bookmark icon" class="icon mr-3 bg-primary" data-inject-svg>
+                <h5 class="mb-0">Well Documented</h5>
+              </div>
+            </div>
+            <div class="m-2">
+              <div class="media rounded align-items-center pl-3 pr-4 pl-md-4 pr-md-5 py-2 bg-white">
+                <img src="assets/img/icons/theme/design/select.svg" alt="Selection interface icon" class="icon mr-3 bg-primary" data-inject-svg>
+                <h5 class="mb-0">Highly Customizable</h5>
+              </div>
+            </div>
+            <div class="m-2">
+              <div class="media rounded align-items-center pl-3 pr-4 pl-md-4 pr-md-5 py-2 bg-white">
+                <img src="assets/img/icons/theme/general/fire.svg" alt="Fire icon" class="icon mr-3 bg-primary" data-inject-svg>
+                <h5 class="mb-0">Saves You Time</h5>
+              </div>
+            </div>
+            <div class="m-2">
+              <div class="media rounded align-items-center pl-3 pr-4 pl-md-4 pr-md-5 py-2 bg-white">
+                <img src="assets/img/icons/theme/food/sushi.svg" alt="Sushi icon" class="icon mr-3 bg-primary" data-inject-svg>
+                <h5 class="mb-0">Delicious Stuff</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-light p-0 row no-gutters">
+      <div class="col-sm-4">
+        <div class="h-100 border-top border-left border-thick border-white p-3 p-xl-4">
+          <div class="p-3 p-md-5">
+            <div class="display-4 text-dark mb-3" data-countup data-start="" data-end="97" data-duration="" data-decimal-places="" data-prefix="" data-separator="" data-grouping="" data-suffix="%" data-easing="">
+            </div>
+            <div>Average satisfaction rating received in the past year</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="h-100 border-top border-left border-thick border-white p-3 p-xl-4">
+          <div class="p-3 p-md-5">
+            <div class="display-4 text-dark mb-3" data-countup data-start="20" data-end="24" data-duration="1" data-decimal-places="" data-prefix="" data-separator="" data-grouping="" data-suffix="/7" data-easing="false">
+            </div>
+            <div>Our support experts are ready to assist anytime</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="h-100 border-top border-left border-thick border-white p-3 p-xl-4">
+          <div class="p-3 p-md-5">
+            <div class="display-4 text-dark mb-3" data-countup data-start="" data-end="142" data-duration="" data-decimal-places="" data-prefix="" data-separator="" data-grouping="" data-suffix="k+" data-easing="">
+            </div>
+            <div>App installs from the two major mobile app stores</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="bg-primary-3 text-white jarallax pb-0" data-jarallax data-speed="0.2">
+      <img src="assets/img/heros/hero-1.jpg" alt="Image" class="jarallax-img opacity-50">
+      <div class="container pb-5">
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 col-md-7">
+            <blockquote class="blockquote p-0 border-0 text-white">
+                    &ldquo;We all know the stigma around build times and the ever expanding arsenal of tooling in modern web apps. Fear not, Jumpstart does away with all of that.&rdquo;
+                </blockquote>
+            <img class="bg-white opacity-50 mt-3 mt-md-4 mb-3" src="assets/img/logos/brand/kanba.svg" alt="Kanba company logo" data-inject-svg>
+            <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center">
+              <h6 class="mb-0 mr-2">Shelley McNabb</h6>
+              <span>Software Engineer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="divider divider-bottom bg-white"></div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row section-title justify-content-center text-center">
+          <div class="col-md-9 col-lg-8 col-xl-7">
+            <h3 class="display-4">Stay in the loop</h3>
+            <div class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-3 mb-md-4">
+            <div class="card h-100 hover-box-shadow">
+              <a href="#" class="d-block bg-gradient rounded-top">
+                <img class="card-img-top hover-fade-out" src="assets/img/blog/thumb-4.jpg" alt="blog.4.image">
+              </a>
+              <div class="card-body">
+                <a href="#">
+                  <h3>It's not just about the clicks. Here's why</h3>
+                </a>
+                <p>
+                  Consectetur libero imp faucibus nisl tincidunt. Sansa tellus mauris a diam maecenas sed.
+                </p>
+                <a href="#">Read Story</a>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <a href="#" class="badge badge-pill badge-primary">Engagement</a>
+                <div class="text-small text-muted">August 8th</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-3 mb-md-4">
+            <div class="card h-100 hover-box-shadow">
+              <a href="#" class="d-block bg-gradient rounded-top">
+                <img class="card-img-top hover-fade-out" src="assets/img/blog/thumb-5.jpg" alt="blog.5.image">
+              </a>
+              <div class="card-body">
+                <a href="#">
+                  <h3>Why social ROI is impossible to measure</h3>
+                </a>
+                <p>
+                  Sed arcu Jon odio Oberyn lacinia at quis. Brienne fermentum vel porta Jon pulvinar neque.
+                </p>
+                <a href="#">Read Story</a>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <a href="#" class="badge badge-pill badge-info">Finance</a>
+                <div class="text-small text-muted">July 21st</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-3 mb-md-4">
+            <div class="card h-100 hover-box-shadow">
+              <a href="#" class="d-block bg-gradient rounded-top">
+                <img class="card-img-top hover-fade-out" src="assets/img/blog/thumb-8.jpg" alt="blog.6.image">
+              </a>
+              <div class="card-body">
+                <a href="#">
+                  <h3>Breathing new life into a tired UI</h3>
+                </a>
+                <p>
+                  Podrick in massa tempor nec feugiat nisl pretium. Consectetur imp faucibus nisl tincidunt.
+                </p>
+                <a href="#">Read Story</a>
+              </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <a href="#" class="badge badge-pill badge-danger">Design</a>
+                <div class="text-small text-muted">June 30th</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-primary-3 text-white o-hidden pb-0">
+      <div class="container">
+        <div class="row section-title justify-content-center text-center">
+          <div class="col-md-9 col-lg-8 col-xl-7">
+            <h3 class="display-4">Customers are lovin’ it</h3>
+            <div class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.</div>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-selected" data-flickity='{ "imagesLoaded": true, "wrapAround":true, "pageDots":false, "adaptiveHeight":true, "autoPlay":3000 }'>
+        <div class="carousel-cell col-xl-7 col-md-8">
+          <div class="row align-items-center justify-content-start justify-content-sm-center mx-3 mx-xl-4">
+            <div class="col-sm-auto mb-4 mb-sm-0">
+              <img class="img-fluid avatar avatar-xl" src="assets/img/avatars/male-4.jpg" alt="Harvey Derwent avatar image">
+            </div>
+            <div class="col pl-lg-4">
+              <h4 class="h2">&ldquo;We are working at almost twice the capacity&rdquo;</h4>
+              <p>
+                We had all sorts of problems around motivation and productivity from our smallest scrums to our largest teams. Jumpstart helped us rise above all and conquer.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-cell col-xl-7 col-md-8">
+          <div class="row align-items-center justify-content-start justify-content-sm-center mx-3 mx-xl-4">
+            <div class="col-sm-auto mb-4 mb-sm-0">
+              <img class="img-fluid avatar avatar-xl" src="assets/img/avatars/male-1.jpg" alt="Harvey Derwent avatar image">
+            </div>
+            <div class="col pl-lg-4">
+              <h4 class="h2">&ldquo;Jumpstart increases productivity.&rdquo;</h4>
+              <p>
+                We had all sorts of problems around motivation and productivity from our smallest scrums to our largest teams.
+                <mark data-aos="highlight-text" data-aos-delay="200">Jumpstart helped us rise above all and conquer.</mark>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-cell col-xl-7 col-md-8">
+          <div class="row align-items-center justify-content-start justify-content-sm-center mx-3 mx-xl-4">
+            <div class="col-sm-auto mb-4 mb-sm-0">
+              <img class="img-fluid avatar avatar-xl" src="assets/img/avatars/female-4.jpg" alt="Shelley McNabb avatar image">
+            </div>
+            <div class="col pl-lg-4">
+              <h4 class="h2">&ldquo;Long build times are a thing of the past!&rdquo;</h4>
+              <p>
+                We all know the stigma around build times and the ever expanding arsenal of tooling in modern web apps. Fear not, Jumpstart does away with all of that.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-cell col-xl-7 col-md-8">
+          <div class="row align-items-center justify-content-start justify-content-sm-center mx-3 mx-xl-4">
+            <div class="col-sm-auto mb-4 mb-sm-0">
+              <img class="img-fluid avatar avatar-xl" src="assets/img/avatars/female-3.jpg" alt="Mary Goddard avatar image">
+            </div>
+            <div class="col pl-lg-4">
+              <h4 class="h2">&ldquo;Top notch support on-call? Yes please.&rdquo;</h4>
+              <p>
+                Product support comes first when we are considering a new service. Do yourself a favour and choose Jumpstart, we have found the support to be second to none.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-cell col-xl-7 col-md-8">
+          <div class="row align-items-center justify-content-start justify-content-sm-center mx-3 mx-xl-4">
+            <div class="col-sm-auto mb-4 mb-sm-0">
+              <img class="img-fluid avatar avatar-xl" src="assets/img/avatars/male-2.jpg" alt="Bradley Singleton avatar image">
+            </div>
+            <div class="col pl-lg-4">
+              <h4 class="h2">&ldquo;Jumpstart gives us total peace of mind.&rdquo;</h4>
+              <p>
+                Living up to their reputation for support and reliablity, Jumpstart has delivered once again on all fronts. Any bugs we find are dealt with promptly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="position-absolute w-50 h-100 top right" data-jarallax-element="100 48">
+        <div class="blob blob-2 w-100 h-100 top right bg-gradient opacity-50"></div>
+      </div>
+      <div class="divider divider-bottom bg-white"></div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row section-title justify-content-center text-center">
+          <div class="col-md-9 col-lg-8 col-xl-7">
+            <h3 class="display-4">Jumpstart your launch</h3>
+            <div class="lead">Get started immediately, no credit card required</div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-5 col-lg-6 col-md-7">
+            <form class="d-flex flex-column flex-md-row">
+              <input class="form-control form-control-lg h-100" type="email" name="get-started-email" placeholder="Email Address">
+              <button class="btn btn-lg btn-primary mt-2 mt-md-0 ml-md-3 flex-shrink-0" type="submit">Get Started</button>
+            </form>
+            <div class="mt-3 text-center text-small text-muted">
+              Free 14 day trial &bull; No set-up costs &bull; Cancel any time
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-primary-3 text-white links-white pb-4 footer-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-auto mr-xl-5 col-md-3 mb-4 mb-md-0">
+            <h5>Demos</h5>
+            <ul class="nav flex-row flex-md-column">
+              <li class="nav-item mr-3 mr-md-0">
+                <a href="landing-1.html" class="nav-link fade-page px-0 py-2">Landing 1</a>
+              </li>
+              <li class="nav-item mr-3 mr-md-0">
+                <a href="landing-2.html" class="nav-link fade-page px-0 py-2">Landing 2</a>
+              </li>
+              <li class="nav-item mr-3 mr-md-0">
+                <a href="landing-3.html" class="nav-link fade-page px-0 py-2">Landing 3</a>
+              </li>
+              <li class="nav-item mr-3 mr-md-0">
+                <a href="landing-4.html" class="nav-link fade-page px-0 py-2">Landing 4</a>
+              </li>
+              <li class="nav-item mr-3 mr-md-0">
+                <a href="landing-5.html" class="nav-link fade-page px-0 py-2">Landing 5</a>
+              </li>
+              <li class="nav-item mr-3 mr-md-0">
+                <a href="landing-6.html" class="nav-link fade-page px-0 py-2">Landing 6</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xl-auto mr-xl-5 col-md-3">
+            <h5>Pages</h5>
+            <ul class="nav flex-row flex-md-column">
+              <li class="nav-item mr-3 mr-md-0">
+                <a href="company-about-1.html" class="nav-link fade-page px-0 py-2">Company</a>
+              </li>
+              <li class="nav-item mr-3 mr-md-0">
+                <a href="blog-listing-1.html" class="nav-link fade-page px-0 py-2">Blog</a>
+              </li>
+              <li class="nav-item mr-3 mr-md-0">
+                <a href="help-center-home.html" class="nav-link fade-page px-0 py-2">Help Center</a>
+              </li>
+              <li class="nav-item mr-3 mr-md-0">
+                <a href="careers-1.html" class="nav-link fade-page px-0 py-2">Careers</a>
+              </li>
+              <li class="nav-item mr-3 mr-md-0">
+                <a href="case-studies.html" class="nav-link fade-page px-0 py-2">Case Studies</a>
+              </li>
+              <li class="nav-item mr-3 mr-md-0">
+                <a href="pricing-plans.html" class="nav-link fade-page px-0 py-2">Pricing</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col mt-4 mt-md-0 mt-lg-5 mt-xl-0 order-lg-4 order-xl-3">
+            <h5>Articles</h5>
+            <ul class="list-unstyled d-flex flex-wrap">
+              <li class="col-12 col-lg-6 col-xl-12 px-0">
+                <div class="row my-2 my-md-3">
+                  <a class="col-5" href="#">
+                    <img class="rounded img-fluid hover-fade-out" src="assets/img/blog/thumb-2.jpg" alt="blog.1.image">
+                  </a>
+                  <div class="col">
+                    <a class="h6" href="#">Introducing the new Jumpstart brand</a>
+                    <div class="text-small text-muted mt-2">October 10th</div>
+                  </div>
+                </div>
+              </li>
+              <li class="col-12 col-lg-6 col-xl-12 px-0">
+                <div class="row my-2 my-md-3">
+                  <a class="col-5" href="#">
+                    <img class="rounded img-fluid hover-fade-out" src="assets/img/blog/thumb-1.jpg" alt="blog.2.image">
+                  </a>
+                  <div class="col">
+                    <a class="h6" href="#">Making the most of team-building sessions</a>
+                    <div class="text-small text-muted mt-2">October 2nd</div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg mt-2 mt-md-5 mt-lg-0 order-lg-3 order-xl-4">
+            <h5>Newsletter</h5>
+            <div class="card card-body bg-white">
+              <p>Get a bi-weekly digest of great articles</p>
+              <form data-form-email novalidate action="/forms/mailchimp.php">
+                <div class="d-flex flex-column flex-sm-row form-group">
+                  <input class="form-control mr-sm-2 mb-2 mb-sm-0 w-auto flex-grow-1" name="email" placeholder="Email Address" type="email" required>
+                  <button type="submit" class="btn btn-primary btn-loading" data-loading-text="Sending">
+                    <!-- Icon for loading animation -->
+                    <svg class="icon bg-white" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <title>Icon For Loading</title>
+                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g>
+                          <polygon points="0 0 24 0 24 24 0 24" opacity="0"></polygon>
+                        </g>
+                        <path d="M12,4 L12,6 C8.6862915,6 6,8.6862915 6,12 C6,15.3137085 8.6862915,18 12,18 C15.3137085,18 18,15.3137085 18,12 C18,10.9603196 17.7360885,9.96126435 17.2402578,9.07513926 L18.9856052,8.09853149 C19.6473536,9.28117708 20,10.6161442 20,12 C20,16.418278 16.418278,20 12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 Z"
+                        fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "></path>
+                      </g>
+                    </svg>
+                    <span>Go</span>
+                  </button>
+                </div>
+                <div data-recaptcha data-sitekey="INSERT_YOUR_RECAPTCHA_V2_SITEKEY_HERE" data-size="invisible" data-badge="bottomleft"></div>
+                <div class="d-none alert alert-success w-100" role="alert" data-success-message>
+                  Thanks, a member of our team will be in touch shortly.
+                </div>
+                <div class="d-none alert alert-danger w-100" role="alert" data-error-message>
+                  Please fill all fields correctly.
+                </div>
+                <div class="text-small text-muted">We'll never share your email address</div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <hr>
+          </div>
+        </div>
+        <div class="row flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
+          <div class="col-auto">
+            <div class="d-flex flex-column flex-sm-row align-items-center text-small">
+              <div class="text-muted">&copy; 2019 Page protected by reCAPTCHA and subject to Google's <a href="https://www.google.com/policies/privacy/" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto mt-3 mt-lg-0">
+            <ul class="list-unstyled d-flex mb-0">
+              <li class="mx-3">
+                <a href="#" class="hover-fade-out">
+                  <img src="assets/img/icons/social/dribbble.svg" alt="Dribbble" class="icon icon-xs bg-white" data-inject-svg>
+                </a>
+              </li>
+              <li class="mx-3">
+                <a href="#" class="hover-fade-out">
+                  <img src="assets/img/icons/social/twitter.svg" alt="Twitter" class="icon icon-xs bg-white" data-inject-svg>
+                </a>
+              </li>
+              <li class="mx-3">
+                <a href="#" class="hover-fade-out">
+                  <img src="assets/img/icons/social/github.svg" alt="Github" class="icon icon-xs bg-white" data-inject-svg>
+                </a>
+              </li>
+              <li class="mx-3">
+                <a href="#" class="hover-fade-out">
+                  <img src="assets/img/icons/social/facebook.svg" alt="Facebook" class="icon icon-xs bg-white" data-inject-svg>
+                </a>
+              </li>
+              <li class="mx-3">
+                <a href="#" class="hover-fade-out">
+                  <img src="assets/img/icons/social/google.svg" alt="Google" class="icon icon-xs bg-white" data-inject-svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <a href="#top" class="btn btn-primary rounded-circle btn-back-to-top" data-smooth-scroll data-aos="fade-up" data-aos-offset="2000" data-aos-mirror="true" data-aos-once="false">
+      <img src="assets/img/icons/interface/icon-arrow-up.svg" alt="Icon" class="icon bg-white" data-inject-svg>
+    </a>
+    <!-- Required vendor scripts (Do not remove) -->
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+
+    <!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
+
+    <!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
+    <script type="text/javascript" src="assets/js/aos.js"></script>
+    <!-- Clipboard (copies content from browser into OS clipboard) -->
+    <script type="text/javascript" src="assets/js/clipboard.min.js"></script>
+    <!-- Fancybox (handles image and video lightbox and galleries) -->
+    <script type="text/javascript" src="assets/js/jquery.fancybox.min.js"></script>
+    <!-- Flatpickr (calendar/date/time picker UI) -->
+    <script type="text/javascript" src="assets/js/flatpickr.min.js"></script>
+    <!-- Flickity (handles touch enabled carousels and sliders) -->
+    <script type="text/javascript" src="assets/js/flickity.pkgd.min.js"></script>
+    <!-- Ion rangeSlider (flexible and pretty range slider elements) -->
+    <script type="text/javascript" src="assets/js/ion.rangeSlider.min.js"></script>
+    <!-- Isotope (masonry layouts and filtering) -->
+    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+    <!-- jarallax (parallax effect and video backgrounds) -->
+    <script type="text/javascript" src="assets/js/jarallax.min.js"></script>
+    <script type="text/javascript" src="assets/js/jarallax-video.min.js"></script>
+    <script type="text/javascript" src="assets/js/jarallax-element.min.js"></script>
+    <!-- jQuery Countdown (displays countdown text to a specified date) -->
+    <script type="text/javascript" src="assets/js/jquery.countdown.min.js"></script>
+    <!-- jQuery smartWizard facilitates steppable wizard content -->
+    <script type="text/javascript" src="assets/js/jquery.smartWizard.min.js"></script>
+    <!-- Plyr (unified player for Video, Audio, Vimeo and Youtube) -->
+    <script type="text/javascript" src="assets/js/plyr.polyfilled.min.js"></script>
+    <!-- Prism (displays formatted code boxes) -->
+    <script type="text/javascript" src="assets/js/prism.js"></script>
+    <!-- ScrollMonitor (manages events for elements scrolling in and out of view) -->
+    <script type="text/javascript" src="assets/js/scrollMonitor.js"></script>
+    <!-- Smooth scroll (animation to links in-page)-->
+    <script type="text/javascript" src="assets/js/smooth-scroll.polyfills.min.js"></script>
+    <!-- SVGInjector (replaces img tags with SVG code to allow easy inclusion of SVGs with the benefit of inheriting colors and styles)-->
+    <script type="text/javascript" src="assets/js/svg-injector.umd.production.js"></script>
+    <!-- TwitterFetcher (displays a feed of tweets from a specified account)-->
+    <script type="text/javascript" src="assets/js/twitterFetcher_min.js"></script>
+    <!-- Typed text (animated typing effect)-->
+    <script type="text/javascript" src="assets/js/typed.min.js"></script>
+    <!-- Required theme scripts (Do not remove) -->
+    <script type="text/javascript" src="assets/js/theme.js"></script>
+    <!-- Removes page load animation when window is finished loading -->
+    <script type="text/javascript">
+      window.addEventListener("load",function(){document.querySelector('body').classList.add('loaded');});
+    </script>
+
+  </body>
+
+</html>
