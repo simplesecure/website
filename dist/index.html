@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes" />
-  
+
     <meta name="description" content="SimpleID makes it easy for developers to add secure, encrypted authentication and storage to their apps.">
     <meta name="keywords" content="Authentication, Storage, Secure, Oauth, Simple, Encryption, Blockstack, Ethereum, Blockchain, Decentralization">
-  
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://www.simpleid.xyz" />
     <meta name="twitter:site" content="@stealthyinc" />
@@ -27,6 +27,10 @@
     <div class="loader">
       <div class="loading-animation"></div>
     </div>
+
+    <!-- Don't remove the next line. It doesn't work in development, just production when you load using incognito. -->
+    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us3.list-manage.com","uuid":"62b7e84964f108856f2967bde","lid":"ef17d43d57","uniqueMethods":true}) })</script>
+
     <!-- <div class="alert alert-dismissible d-none d-md-block bg-primary-3 text-white py-4 py-md-3 px-0 mb-0 rounded-0 border-0">
     <div class="container">
         <div class="row no-gutters align-items-md-center justify-content-center">
@@ -51,7 +55,7 @@
             <img alt="SimpleID" data-inject-svg src="assets/img/logos/simpleid.svg">
           </a>
           <div class="d-flex align-items-center order-lg-3">
-            <a href="https://app.simpleid.xyz" target="_blank" class="btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3">Start For Free</a>
+            <a href="#app" class="btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3">Start For Free</a>
             <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target=".navbar-collapse" data-toggle="collapse" type="button">
               <img alt="Navbar Toggler Open Icon" class="navbar-toggler-open icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-menu.svg">
               <img alt="Navbar Toggler Close Icon" class="navbar-toggler-close icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-x.svg">
@@ -66,10 +70,13 @@
                 <a aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="#pricing" role="button">Pricing</a>
               </li>
               <li class="nav-item">
-                <a aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="https://github.com/simplesecure" role="button">Examples</a>
+                <a aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="#examples" role="button">Examples</a>
               </li>
+              <!--li class="nav-item">
+                <a aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="#demo" role="button">Demo</a>
+              </li-->
               <li class="nav-item">
-                <a aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="https://simpleid.xyz/demo" role="button">Demo</a>
+                <a aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="https://medium.com/simpleid-dev-tools" target="_blank" role="button">Blog</a>
               </li>
             </ul>
           </div>
@@ -85,7 +92,7 @@
               <h1 class="display-3">Developer tools for<br> <mark><span data-typed-text data-loop="true" data-type-speed="90" data-strings='["Ethereum","IPFS","Blockstack","Pinata", "Textile"]'></span></mark></h1>
               <p class="lead px-xl-5">Add Web 3.0 technology to your application in under 10 minutes. Authentication, storage, smart contracts, and more.</p>
               <div class="d-flex flex-column flex-sm-row mt-4 mt-md-5 justify-content-center" data-aos="fade-up" data-aos-delay="300">
-                <a href="https://app.simpleid.xyz" target="_blank" class="btn btn-primary btn-lg mx-sm-2 my-1 my-sm-0" data-smooth-scroll>Get Started Free</a>
+                <a href="#app" class="btn btn-primary btn-lg mx-sm-2 my-1 my-sm-0" data-smooth-scroll>Get Started Free</a>
                 <a href="https://docs.simpleid.xyz" target="_blank" class="btn btn-outline-primary btn-lg mx-sm-2 my-1 my-sm-0">Read The Docs</a>
               </div>
             </div>
@@ -154,7 +161,8 @@
         </div>
       </div>
     </section>
-    <section id="landing-pages">
+
+    <section id="examples">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -166,6 +174,7 @@
             <div class="py-2 p-lg-4 p-xl-5 rounded bg-secondary text-center">
               <h3>We believe developers should focus on their users.</h3>
               <p>So, we've made integrating with SimpleID as easy as possible. Below is an example of creating a new user and logging them in.</p>
+              <!-- TODO button here: https://github.com/simplesecure -->
               <blockquote class="embedly-card"><h4><a href="https://runkit.com/polluterofminds/simpleid-node-sdk">RunKit</a></h4><p>RunKit notebooks are interactive javascript playgrounds connected to a complete node environment right in your browser. Every npm module pre-installed.</p></blockquote>
               <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
             </div>
@@ -173,7 +182,26 @@
         </div>
       </div>
     </section>
-    
+
+    <!--section id="demo">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h3 class="h1">Demo TBD ...</h3>
+          </div>
+        </div>
+        <div class="row mt-4 mt-md-5">
+          <div class="col">
+            <div class="py-2 p-lg-4 p-xl-5 rounded bg-secondary text-center">
+              <h3>TBD ...</h3>
+              <p>TBD ...</p>
+              <!-- TODO iframe here https://simpleid.xyz/demo"  -->
+            <!--/div>
+          </div>
+        </div>
+      </div>
+    </section-->
+
     <section id="pricing" class="pt-0">
     <div data-overlay class="bg-primary-3 text-white o-hidden">
         <section>
@@ -198,12 +226,12 @@
       </div>
       <section class="bg-light">
         <div class="container">
-          <div class="row align-items-center justify-content-center">
+          <div class="row justify-content-center">
             <div class="col-sm-9 col-md-7 col-lg-4 mb-3 mb-md-4 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
               <div class="card card-body align-items-center shadow">
-  
+
                 <div class="text-center mb-4">
-                  <h4>Hobby</h4>
+                  <h4>Silver</h4>
                   <div class="d-flex align-items-center justify-content-center mb-1">
                     <span class="h5 mb-0 mr-2">$</span>
                     <span class="display-3 mb-0 text-dark">0</span>
@@ -268,14 +296,13 @@
                     </div>
                   </li>
                 </ul>
-                <a href="https://app.simpleid.xyz" class="btn btn-lg btn-block btn-outline-primary">Start with Hobby</a>
+                <a href="#app" class="btn btn-lg btn-block btn-outline-primary">Start with Silver</a>
               </div>
             </div>
             <div class="col-sm-9 col-md-7 col-lg-4 mb-3 mb-md-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
               <div class="card card-body align-items-center shadow">
-                <div class="badge badge-success badge-pill mb-4">Best Value</div>
                 <div class="text-center mb-4">
-                  <h4>Startup</h4>
+                  <h4><span class="badge badge-success badge-pill">Best Value</span>&nbsp;&nbsp;Gold</h4>
                   <div class="d-flex align-items-center justify-content-center mb-1">
                     <span class="h5 mb-0 mr-2">$</span>
                     <span class="display-3 mb-0 text-dark">9</span>
@@ -340,19 +367,19 @@
                     </div>
                   </li>
                 </ul>
-                <a href="https://app.simpleid.xyz" class="btn btn-lg btn-block btn-primary">Get The Startup Plan</a>
+                <a href="#app" class="btn btn-lg btn-block btn-primary">Get The Gold Plan</a>
               </div>
             </div>
             <div class="col-sm-9 col-md-7 col-lg-4 mb-3 mb-md-4 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
               <div class="card card-body align-items-center shadow">
-  
+
                 <div class="text-center mb-4">
-                  <h4>Enterprise</h4>
+                  <h4>Platinum</h4>
                   <div class="d-flex align-items-center justify-content-center mb-1">
-                    <span class="h5 mb-0 mr-2"></span>
-                    <span class="display-3 mb-0 text-dark">Contact</span>
+                    <span class="h5 mb-0 mr-2">$</span>
+                    <span class="display-3 mb-0 text-dark">XX</span>
                   </div>
-                  <div></div>
+                  <div>Per month</div>
                 </div>
                 <ul class="list-unstyled p-0">
                   <li class="my-3">
@@ -360,7 +387,7 @@
                       <div class="rounded-circle bg-success-alt">
                         <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
                       </div>
-                      <h6 class="mb-0 ml-3">All startup plan features</h6>
+                      <h6 class="mb-0 ml-3">All Gold plan features</h6>
                     </div>
                   </li>
                   <li class="my-3">
@@ -418,13 +445,13 @@
           </div>
           <div class="row justify-content-center mt-4 mt-md-5">
             <div class="col-auto">
-             
+
             </div>
           </div>
         </div>
       </section>
     </section>
-    
+
     <section class="bg-primary">
       <div class="container">
         <div class="text-white">
@@ -438,7 +465,7 @@
         <div class="row" data-isotope-collection data-ignore-hash="true">
           <div class="col-sm-6 col-lg-4 mb-3 mb-md-4" data-isotope-item>
             <div class="card card-body">
-              <p>&ldquo;The user experience enhancement by dropping in SimpleID 
+              <p>&ldquo;The user experience enhancement by dropping in SimpleID
                 <mark data-aos='highlight-text' data-aos-delay='200'>is incredible and can't be undersold.</mark>Graphite's users love it.&rdquo;</p>
               <div class="d-flex">
                 <img src="assets/img/avatars/envato.svg" alt="Themeforest">
@@ -466,7 +493,7 @@
 
           <div class="col-sm-6 col-lg-4 mb-3 mb-md-4" data-isotope-item>
             <div class="card card-body">
-              <p>&ldquo;This makes demos a lot cleaner to potential customers. The Blockstack flow threw a lot of people off. 
+              <p>&ldquo;This makes demos a lot cleaner to potential customers. The Blockstack flow threw a lot of people off.
                 <mark data-aos='highlight-text' data-aos-delay='200'>I demoed the app today for a customer with the SimpleID integration and he was really stoked.</mark>&rdquo;</p>
               <div class="d-flex">
                 <img src="assets/img/avatars/envato.svg" alt="Themeforest">
@@ -481,6 +508,28 @@
         </div>
       </div>
     </section>
+
+
+    <!-- consider merging this with next section -->
+    <section id="app">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h3 class="h1">App TBD ...</h3>
+          </div>
+        </div>
+        <div class="row mt-4 mt-md-5">
+          <div class="col">
+            <div class="py-2 p-lg-4 p-xl-5 rounded bg-secondary text-center">
+              <h3>TBD ...</h3>
+              <p>TBD ...</p>
+              <!-- TODO iframe here https://app.simpleid.xyz  ?s=;t="  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="pb-0">
       <div class="container">
         <div class="row section-title justify-content-center text-center">
@@ -491,7 +540,7 @@
         </div>
         <div class="row justify-content-center text-center mt-md-n4">
           <div class="col-auto">
-            <a href="https://app.simpleid.xyz" target="_blank" class="btn btn-primary btn-lg">Get Started Free</a>
+            <a href="#app" class="btn btn-primary btn-lg">Get Started Free</a>
           </div>
         </div>
       </div>
@@ -532,9 +581,9 @@
               </li> -->
             </ul>
           </div>
-          
+
           <div class="col-lg mt-2 mt-md-5 mt-lg-0 order-lg-3 order-xl-4">
-            <h5>Newsletter</h5>
+            <h5>Slack & Newsletter</h5>
             <div class="card card-body bg-white">
               <p>Stay up to date on all SimpleID projects and development</p>
               <form data-form-email novalidate action="/forms/mailchimp.php">
