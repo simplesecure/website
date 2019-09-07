@@ -584,14 +584,25 @@
 
           <div class="col-lg mt-2 mt-md-5 mt-lg-0 order-lg-3 order-xl-4">
             <h5>Slack & Newsletter</h5>
-            <div class="card card-body bg-white">
+            <div id="mc_embed_signup" class="card card-body bg-white">
               <p>Stay up to date on all SimpleID projects and development</p>
-              <form data-form-email novalidate action="/forms/mailchimp.php">
-                <div class="d-flex flex-column flex-sm-row form-group">
-                  <input class="form-control mr-sm-2 mb-2 mb-sm-0 w-auto flex-grow-1" name="email" placeholder="Email Address" type="email" required>
-                  <input class="form-control mr-sm-2 mb-2 mb-sm-0 w-auto flex-grow-1" name="firstName" placeholder="First Name" type="text" required>
-                  <button type="submit" class="btn btn-primary btn-loading" data-loading-text="Sending">
-                    <!-- Icon for loading animation -->
+              <form action="https://xyz.us3.list-manage.com/subscribe/post?u=62b7e84964f108856f2967bde&amp;id=ef17d43d57" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                  <div class="d-flex flex-column flex-sm-row form-group mc-field-group">
+                  	<!-- <label for="mce-EMAIL">Email Address </label> -->
+                    <input id="mce-EMAIL" name="EMAIL" class="required email form-control mr-sm-2 mb-2 mb-sm-0 w-auto flex-grow-1" name="email" placeholder="Email Address" type="email">
+                  </div>
+                  <div class="d-flex flex-column flex-sm-row form-group mc-field-group">
+                  	<!-- <label for="mce-FNAME">First Name </label> -->
+                    <input id="mce-FNAME" class="form-control mr-sm-2 mb-2 mb-sm-0 w-auto flex-grow-1" name="FNAME" placeholder="First Name" type="text" required>
+                  </div>
+                	<div id="mce-responses" class="clear">
+                		<div class="response" id="mce-error-response" style="display:none"></div>
+                		<div class="response" id="mce-success-response" style="display:none"></div>
+                	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_62b7e84964f108856f2967bde_ef17d43d57" tabindex="-1" value=""></div>
+                  <!-- <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div> -->
+                  <button id="mc-embedded-subscribe" type="submit" value="Subscribe" name="subscribe" class="btn btn-primary btn-loading" data-loading-text="Sending">
                     <svg class="icon bg-white" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                       <title>Icon For Loading</title>
                       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -602,19 +613,13 @@
                         fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "></path>
                       </g>
                     </svg>
-                    <span>Go</span>
+                    <span>Submit</span>
                   </button>
                 </div>
-                <div data-recaptcha data-sitekey="INSERT_YOUR_RECAPTCHA_V2_SITEKEY_HERE" data-size="invisible" data-badge="bottomleft"></div>
-                <div class="d-none alert alert-success w-100" role="alert" data-success-message>
-                  Thanks, a member of our team will be in touch shortly.
-                </div>
-                <div class="d-none alert alert-danger w-100" role="alert" data-error-message>
-                  Please fill all fields correctly.
-                </div>
-                <div class="text-small text-muted">We'll never share your email address</div>
               </form>
             </div>
+            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+            <!--End mc_embed_signup-->
           </div>
         </div>
         <div class="row">
