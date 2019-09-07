@@ -12,6 +12,7 @@
     // Form data to use as email field
     // (The name="..." value from the email field in your HTML form)
     $emailField = 'email';
+    $firstName = 'firstName'
 
     // Fields to be submitted to your MailChimp list along with the email address
     // In this example, "NAME" is the field in your MailChimp list,
