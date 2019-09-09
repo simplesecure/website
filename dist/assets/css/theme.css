@@ -7607,6 +7607,9 @@ a.card {
 .bg-gradient {
   background: linear-gradient(to right, #2568EF, #FF564F) !important; }
 
+.bg-gradient-1 {
+  background: linear-gradient(to right, #c0cfff, #003dff) !important;
+}
 .bg-primary-alt {
   background-color: rgba(37, 104, 239, 0.1); }
 
