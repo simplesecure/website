@@ -74,8 +74,15 @@
       </nav>
     </div>
 
-    <div class="ph-button">
-      <a href="https://www.producthunt.com/posts/simpleid?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-simpleid" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=165087&theme=dark" alt="SimpleID - Add decentralized auth and storage to your app in 10 minutes | Product Hunt Embed" style="width: 250px; height: 54px;" width="250px" height="54px" /></a>
+    <!-- the class ph-button has the inline styling below defined, but fails to occur at the correct time resulting in the ph button being in the wrong spot, hence the inline styling.-->
+    <div style="position:fixed; bottom:30px; left:15px; z-index: 999;">
+      <a href="https://www.producthunt.com/posts/simpleid?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-simpleid" target="_blank">
+        <img
+          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=165087&theme=dark"
+          alt="SimpleID - Add decentralized auth and storage to your app in 10 minutes | Product Hunt Embed"
+          style="width: 250px; height: 54px;"
+          width="250px" height="54px" />
+      </a>
     </div>
 
     <div data-overlay class="o-hidden">
@@ -92,13 +99,14 @@
             </div>
           </div>
         </div>
-        <div class="position-absolute bottom left w-50 h-50 d-none d-md-block" data-jarallax-element="-24 48">
+        <!-- not working due to css transation issue (not timing as we confirmed this by injecting the code) -->
+        <!--div class="position-absolute bottom left w-50 h-50 d-none d-md-block" data-jarallax-element="-24 48">
           <div class="blob bg-gradient-1 w-50 h-100 bottom left"></div>
         </div>
         <div class="position-absolute top right w-50 h-50 d-none d-md-block" data-jarallax-element="48">
           <div class="blob blob-2 bg-gradient-1 w-50 h-50 top right"></div>
         </div>
-        <div class="divider divider-bottom bg-primary-3"></div>
+        <div class="divider divider-bottom bg-primary-3"></div-->
       </section>
     </div>
 
@@ -662,7 +670,6 @@
     <script type="text/javascript">
       window.addEventListener("load",function(){document.querySelector('body').classList.add('loaded');});
     </script>
-
   </body>
 
 </html>
