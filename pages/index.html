@@ -205,13 +205,13 @@
     </div>
 
     <div class="navbar-container">
-      <nav class="navbar navbar-expand-lg navbar-light" data-overlay data-sticky="top">
+      <nav style="background: #fff;" class="navbar navbar-expand-lg navbar-light" data-overlay data-sticky="top">
         <div class="container">
           <a onclick="logButton('Header Logo')" class="navbar-brand navbar-brand-dynamic-color" href="index.html">
             <img alt="SimpleID" data-inject-svg src="assets/img/logos/simpleid.svg">
           </a>
           <div class="d-flex align-items-center order-lg-3">
-            <a onclick="logButton('Header Start For Free')" href="#app" class="btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3">Start For Free</a>
+            <a onclick="logButton('Header Start For Free')" href="#pricing" class="btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3">Get Started Free</a>
             <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target=".navbar-collapse" data-toggle="collapse" type="button">
               <img alt="Navbar Toggler Open Icon" class="navbar-toggler-open icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-menu.svg">
               <img alt="Navbar Toggler Close Icon" class="navbar-toggler-close icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-x.svg">
@@ -222,142 +222,522 @@
               <li class="nav-item">
                 <a onclick="logButton('Header Features')" aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="#features" role="button">Features</a>
               </li>
-              <li class="nav-item">
-                <a onclick="logButton('Header Examples')" aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="#examples" role="button">Examples</a>
-              </li>
+             
               <li class="nav-item">
                 <a onclick="logButton('Header Pricing')" aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="#pricing" role="button">Pricing</a>
               </li>
-              <li class="nav-item">
-                <a onclick="logButton('Header Blog')" aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="https://medium.com/simpleid-dev-tools" target="_blank" role="button">Blog</a>
-              </li>
+
             </ul>
           </div>
         </div>
       </nav>
     </div>
 
-    <!-- the class ph-button has the inline styling below defined, but fails to occur at the correct time resulting in the ph button being in the wrong spot, hence the inline styling.-->
-    <div style="position:fixed; bottom:30px; left:15px; z-index: 999;">
-      <a onclick="logButton('Product Hunt')" href="https://www.producthunt.com/posts/simpleid?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-simpleid" target="_blank">
-        <img
-          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=165087&theme=dark"
-          alt="SimpleID - Add decentralized auth and storage to your app in 10 minutes | Product Hunt Embed"
-          style="width: 250px; height: 54px;"
-          width="250px" height="54px" />
-      </a>
-    </div>
-
-    <div data-overlay class="o-hidden">
+    <div data-overlay class="bg-primary-3 jarallax text-white" data-jarallax data-speed="0.2">
+      <img src="assets/img/heros/hero-3.jpg" alt="Background" class="jarallax-img opacity-30">
       <section class="pb-0">
-        <div class="container">
-          <div class="row justify-content-center text-center min-vh-40 d-flex flex-column align-items-center">
-            <div class="col-md-10 col-lg-9 col-xl-8" data-aos="fade-up">
-              <h1 class="display-3">Easy auth for<br> <mark><span data-typed-text data-loop="true" data-type-speed="90" data-strings='["Ethereum","IPFS","Blockstack","Pinata", "Textile"]'></span></mark></h1>
-              <p class="lead px-xl-5">Add Web 3.0 technology to your application in under 10 minutes. Authentication, storage, smart contracts, and more.</p>
-              <div class="d-flex flex-column flex-sm-row mt-4 mt-md-5 justify-content-center" data-aos="fade-up" data-aos-delay="300">
-                <a onclick="logButton('Get Started Free')" href="#app" class="btn btn-primary btn-lg mx-sm-2 my-1 my-sm-0" data-smooth-scroll>Get Started Free</a>
-                <a onclick="logButton('Read The Docs')" href="https://docs.simpleid.xyz" target="_blank" class="btn btn-outline-primary btn-lg mx-sm-2 my-1 my-sm-0">Read The Docs</a>
+        <div class="container pb-5">
+          <div class="row justify-content-center text-center">
+            <div class="col-xl-8 col-lg-10 col-md-11">
+              <a data-fancybox href="https://vimeo.com/166034462#t=32s" class="btn btn-lg btn-light rounded-circle mb-4 mb-md-5" data-aos="zoom-in" data-aos-delay="400">
+                <img src="assets/img/icons/interface/icon-media-play.svg" alt="Media Play Icon" class="icon icon-lg bg-dark pl-1" data-inject-svg>
+              </a>
+              <h1 class="display-3" data-aos="fade-up" data-aos-delay="100">Simple blockchain solutions</h1>
+              <p class="lead" data-aos="fade-up" data-aos-delay="200">
+                SimpleID gives you a UX-first, all-in-one-solution to build your blockchain-based company.
+              </p>
+              <div class="d-flex flex-column flex-sm-row justify-content-center mt-4 mt-md-5" data-aos="fade-up" data-aos-delay="300">
+                <a href="#features" class="btn btn-primary btn-lg mx-sm-2 my-1 my-sm-0">Features</a>
+                <a data-fancybox href="https://vimeo.com/166034462#t=32s" class="btn btn-outline-light btn-lg mx-sm-2 my-1 my-sm-0">Learn More</a>
               </div>
             </div>
           </div>
         </div>
-        <!-- not working due to css transation issue (not timing as we confirmed this by injecting the code) -->
-        <!--div class="position-absolute bottom left w-50 h-50 d-none d-md-block" data-jarallax-element="-24 48">
-          <div class="blob bg-gradient-1 w-50 h-100 bottom left"></div>
-        </div>
-        <div class="position-absolute top right w-50 h-50 d-none d-md-block" data-jarallax-element="48">
-          <div class="blob blob-2 bg-gradient-1 w-50 h-50 top right"></div>
-        </div-->
-        <div class="divider divider-bottom bg-primary-3"></div>
+        <div class="divider divider-bottom bg-white"></div>
       </section>
     </div>
+    <section id="features" class="pb-0">
+      <div class="container">
+        <h2 style="margin-bottom: 25px;" class="text-center">Benefits of using SimpleID</h2>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-3 mb-md-4">
+            <div class="card h-100 hover-box-shadow">
+              <div class="d-block bg-gradient rounded-top">
+                <img class="card-img-top hover-fade-out" src="assets/img/icons/theme/devices/server.svg" alt="Image accompanying Treva testimonial">
+                
+              </div>
+              <div class="card-body">
+                <h3>Enterprise-Grade & Permissionless</h3>
+                <p>
+                  Many enterprise blockchain solutions require businesses to stand up a permissioned blockchain. SimpleID lets you use public blockchains while maintaining privacy and security.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-3 mb-md-4">
+            <div class="card h-100 hover-box-shadow">
+              <div class="d-block bg-gradient rounded-top">
+                <img class="card-img-top hover-fade-out" src="assets/img/icons/theme/shopping/dollar.svg" alt="Image accompanying Ztos testimonial">
+              </div>
+              <div class="card-body">
+                <h3>Save Time & Money</h3>
+                <p>
+                  You could hire engineers dedicated to maintaining your blockchain solution or you could use SimpleID and save thousands of dollars per year. Use your resources elsewhere and grow your business. 
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-3 mb-md-4">
+            <div class="card h-100 hover-box-shadow">
+              <div class="d-block bg-gradient rounded-top">
+                <img class="card-img-top hover-fade-out" src="assets/img/icons/theme/general/smile.svg" alt="Image accompanying Utosia testimonial">
+              </div>
+              <div class="card-body">
+                <h3>Decentralization & UX</h3>
+                <p>
+                  Since blockchain solutions became mainstream, there has largely been a trade-off of poor user experience in exchange for decentralization. SimpleID gives your end-users and customers both. 
+                </p>
+              </div>
+            </div>
+          </div>
+          <!--<div class="col-md-6 col-lg-4 mb-3 mb-md-4">
+            <div class="card h-100 hover-box-shadow">
+              <div class="d-block bg-gradient rounded-top">
+                <img class="card-img-top hover-fade-out" src="assets/img/case-studies/thumb-8.jpg" alt="Image accompanying Asgardia testimonial">
+                <div class="badge badge-light badge-pill">
+                  <img src="assets/img/logos/brand/ztos.svg" alt="Ztos company logo" class="icon icon-sm m-lg-1">
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Ztos</h3>
+                <p>
+                  Samwell nisl purus in mollis. Varys eget velit aliquet sagittis consectetur purus ut.
+                </p>
+                <a href="#" class="stretched-link">Read Story</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-3 mb-md-4">
+            <div class="card h-100 hover-box-shadow">
+              <div class="d-block bg-gradient rounded-top">
+                <img class="card-img-top hover-fade-out" src="assets/img/case-studies/thumb-3.jpg" alt="Image accompanying Kyan testimonial">
+                <div class="badge badge-light badge-pill">
+                  <img src="assets/img/logos/brand/kyan.svg" alt="Kyan company logo" class="icon icon-sm m-lg-1">
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Kyan</h3>
+                <p>
+                  Samwell nisl purus in mollis. Varys eget velit aliquet sagittis consectetur purus ut.
+                </p>
+                <a href="#" class="stretched-link">Read Story</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-3 mb-md-4">
+            <div class="card h-100 hover-box-shadow">
+              <div class="d-block bg-gradient rounded-top">
+                <img class="card-img-top hover-fade-out" src="assets/img/case-studies/thumb-10.jpg" alt="Image accompanying Fox Hub testimonial">
+                <div class="badge badge-light badge-pill">
+                  <img src="assets/img/logos/brand/goldline.svg" alt="Goldline company logo" class="icon icon-sm m-lg-1">
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Goldline</h3>
+                <p>
+                  Samwell nisl purus in mollis. Varys eget velit aliquet sagittis consectetur purus ut.
+                </p>
+                <a href="#" class="stretched-link">Read Story</a>
+              </div>
+            </div>
+          </div>
+        </div>-->
+      </div>
+    </section>
+    <section id="" class="pt-5">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col">
+            <!--<h2 class="mb-4 text-center">SimpleID Features vs. Building Your Own Solution</h2>-->
+          </div>
+        </div>
+        <div class="row justify-content-end sticky-top bg-white">
+          <div class="col-lg-3 col-4 py-3 py-md-4">
+            <div class="d-flex flex-column align-items-center text-center">
+              <h4>Combining OS Libraries</h4>
+            </div>
+          </div>
+          <div class="col-lg-3 col-4 py-3 py-md-4">
+            <div class="d-flex flex-column align-items-center text-center">
+              <h4>Build Your Own</h4>
+            </div>
+          </div>
+          <div class="col-lg-3 col-4 py-3 py-md-4">
+            <div class="d-flex flex-column align-items-center text-center">
+              <h4>SimpleID</h4>
+            </div>
+          </div>
+        </div>
+        <div class="mt-5">
+          <div class="pricing-table-section text-center text-lg-left">
+            <div class="border rounded">
+              <div class="row no-gutters align-items-center">
+                <div class="col-12 col-lg-3  py-3 py-md-4">
+                  <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+                    <h6 class="mb-0 ml-lg-4">Quick Start</h6>
+                    <div class="ml-2 tooltip-circle bg-dark text-white" data-toggle="tooltip" title="Get up and running in just a few minutes.">?</div>
+                  </div>
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+                  <div class="rounded-circle bg-danger-alt">
+                    <img src="assets/img/icons/interface/icon-x.svg" alt="Included" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                  </div>
 
-    <section id="features" class="bg-primary-3 text-white">
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+                  <div class="rounded-circle bg-danger-alt">
+                    <img src="assets/img/icons/interface/icon-x.svg" alt="Included" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                  </div>
+
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+                  <div class="rounded-circle bg-success-alt">
+                    <img src="assets/img/icons/interface/icon-check.svg" alt="Included" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row no-gutters align-items-center">
+                <div class="col-12 col-lg-3  py-3 py-md-4">
+                  <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+                    <h6 class="mb-0 ml-lg-4">Single Dependency</h6>
+                    <div class="ml-2 tooltip-circle bg-dark text-white" data-toggle="tooltip" title="Single SDK or API">?</div>
+                  </div>
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+                  <div class="rounded-circle bg-danger-alt">
+                    <img src="assets/img/icons/interface/icon-x.svg" alt="Included" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                  </div>
+
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+                  <div class="rounded-circle bg-danger-alt">
+                    <img src="assets/img/icons/interface/icon-x.svg" alt="Included" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                  </div>
+
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+                  <div class="rounded-circle bg-success-alt">
+                    <img src="assets/img/icons/interface/icon-check.svg" alt="Included" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row no-gutters align-items-center">
+                <div class="col-12 col-lg-3  py-3 py-md-4">
+                  <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+                    <h6 class="mb-0 ml-lg-4">Maintenance Free</h6>
+                    <div class="ml-2 tooltip-circle bg-dark text-white" data-toggle="tooltip" title="When a dependency or protocol is updated, do you have to update too?">?</div>
+                  </div>
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                  <div class="rounded-circle bg-danger-alt">
+                    <img src="assets/img/icons/interface/icon-x.svg" alt="Included" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                  </div>
+
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                  <div class="rounded-circle bg-danger-alt">
+                    <img src="assets/img/icons/interface/icon-x.svg" alt="Included" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                  </div>
+
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                  <div class="rounded-circle bg-success-alt">
+                    <img src="assets/img/icons/interface/icon-check.svg" alt="Included" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row no-gutters align-items-center">
+                <div class="col-12 col-lg-3  py-3 py-md-4">
+                  <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+                    <h6 class="mb-0 ml-lg-4">Cross-Protocol Support</h6>
+                    <div class="ml-2 tooltip-circle bg-dark text-white" data-toggle="tooltip" title="Support for multiple blockchains or multiple Web 3.0 technologies out of the box.">?</div>
+                  </div>
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+                  <span>?</span>
+
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+                  <div class="rounded-circle bg-danger-alt">
+                    <img src="assets/img/icons/interface/icon-x.svg" alt="Included" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                  </div>
+
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+                  <div class="rounded-circle bg-success-alt">
+                    <img src="assets/img/icons/interface/icon-check.svg" alt="Included" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row no-gutters align-items-center">
+                <div class="col-12 col-lg-3  py-3 py-md-4">
+                  <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+                    <h6 class="mb-0 ml-lg-4">Analytics</h6>
+                    <div class="ml-2 tooltip-circle bg-dark text-white" data-toggle="tooltip" title="Numbers matter even in the decentralized web, and analytics help you understand your company's success.">?</div>
+                  </div>
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                 <span>?</span>
+
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                  <div class="rounded-circle bg-danger-alt">
+                    <img src="assets/img/icons/interface/icon-x.svg" alt="Included" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                  </div>
+
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                  <div class="rounded-circle bg-success-alt">
+                    <img src="assets/img/icons/interface/icon-check.svg" alt="Included" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row no-gutters align-items-center">
+                <div class="col-12 col-lg-3  py-3 py-md-4">
+                  <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+                    <h6 class="mb-0 ml-lg-4">Dedicated Support</h6>
+                    <div class="ml-2 tooltip-circle bg-dark text-white" data-toggle="tooltip" title="Account manager that will help you implement your solution and answer your questions.">?</div>
+                  </div>
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                  <div class="rounded-circle bg-danger-alt">
+                    <img src="assets/img/icons/interface/icon-x.svg" alt="Included" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                  </div>
+
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                  <div class="rounded-circle bg-danger-alt">
+                    <img src="assets/img/icons/interface/icon-x.svg" alt="Included" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                  </div>
+
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                  <div class="rounded-circle bg-success-alt">
+                    <img src="assets/img/icons/interface/icon-check.svg" alt="Included" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row no-gutters align-items-center">
+                <div class="col-12 col-lg-3  py-3 py-md-4">
+                  <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+                    <h6 class="mb-0 ml-lg-4">Compliance Built-In</h6>
+                    <div class="ml-2 tooltip-circle bg-dark text-white" data-toggle="tooltip" title="KYC/AML compliance already in place so you don't have to worry.">?</div>
+                  </div>
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                  <div class="rounded-circle bg-danger-alt">
+                    <img src="assets/img/icons/interface/icon-x.svg" alt="Included" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                  </div>
+
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                  <div class="rounded-circle bg-danger-alt">
+                    <img src="assets/img/icons/interface/icon-x.svg" alt="Included" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                  </div>
+
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                  <div class="rounded-circle bg-success-alt">
+                    <img src="assets/img/icons/interface/icon-check.svg" alt="Included" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row no-gutters align-items-center">
+                <div class="col-12 col-lg-3  py-3 py-md-4">
+                  <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+                    <h6 class="mb-0 ml-lg-4">Cross-Platform Out of the Box</h6>
+                    <div class="ml-2 tooltip-circle bg-dark text-white" data-toggle="tooltip" title="Build in the language you prefer and for the devices your customers use.">?</div>
+                  </div>
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                  <div class="rounded-circle bg-danger-alt">
+                    <img src="assets/img/icons/interface/icon-x.svg" alt="Included" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                  </div>
+
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                  <div class="rounded-circle bg-danger-alt">
+                    <img src="assets/img/icons/interface/icon-x.svg" alt="Included" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                  </div>
+
+                </div>
+                <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                  <div class="rounded-circle bg-success-alt">
+                    <img src="assets/img/icons/interface/icon-check.svg" alt="Included" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="row no-gutters align-items-center">
+              <div class="col-12 col-lg-3  py-3 py-md-4">
+                <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+                  <h6 class="mb-0 ml-lg-4">Multi-Factor Auth Built-In</h6>
+                  <div class="ml-2 tooltip-circle bg-dark text-white" data-toggle="tooltip" title="Security through email/authenticator app multi-factor authentication.">?</div>
+                </div>
+              </div>
+              <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                <div class="rounded-circle bg-danger-alt">
+                  <img src="assets/img/icons/interface/icon-x.svg" alt="Included" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                </div>
+
+              </div>
+              <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                <div class="rounded-circle bg-danger-alt">
+                  <img src="assets/img/icons/interface/icon-x.svg" alt="Included" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                </div>
+
+              </div>
+              <div class="col-4 col-lg-3 d-flex justify-content-center py-3 py-md-4">
+
+                <div class="rounded-circle bg-success-alt">
+                  <img src="assets/img/icons/interface/icon-check.svg" alt="Included" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-primary-3 pb-0">
       <div class="container">
         <div class="text-white">
-          <div class="row justify-content-center text-center">
+          <div class="row section-title justify-content-center text-center">
             <div class="col-md-9 col-lg-8 col-xl-7">
-              <h3 class="display-4">Features</h3>
+              <h3 class="display-4">Industry-Leading Partnerships</h3>
+              <div class="lead">When you build with SimpleID, you build with the best.</div>
             </div>
           </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-6 mb-3 mb-md-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card card-body bg-white align-items-start flex-sm-row h-100">
-              <img src="assets/img/icons/theme/general/settings-1.svg" alt="Icon for Settings-1" class="icon bg-primary mb-4 mb-sm-0" data-inject-svg>
-              <div class="ml-sm-3 ml-md-4">
-                <h5>Cross-Platform Support</h5>
-                <p>
-                  No matter your target device or programming language, SimpleID has you covered with documentation and examples.
-                </p>
-                <a onclick="logButton('Read The Docs')" href="https://docs.simpleid.xyz" target="_blank" class="btn btn-sm btn-primary">Read The Docs</a>
+        <div class="row" data-isotope-collection data-ignore-hash="true">
+          <div class="col-sm-6 col-lg-4 mb-3 mb-md-4" data-isotope-item>
+            <div class="card card-body">
+              
+              <div class="d-flex">
+                
+                <div class="ml-3">
+                  <img style="max-width: 50%; margin-bottom: 10px" src="assets/img/partners/Pinata.png" alt="Pinata">
+                  <p class="mb-0">Pinata is a leader in the IPFS community. Their pinning service ensures your IPFS data is highly available. They are trusted by some of the top companies in the world.</p>
+                  <div><a onclick="logButton('Graphite')" href="https://graphitedocs.com" target="_blank">Learn more about Pinata</a></div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-6 mb-3 mb-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card card-body bg-white align-items-start flex-sm-row h-100">
-              <img src="assets/img/icons/theme/devices/display-1.svg" alt="Icon for Display-1" class="icon bg-primary mb-4 mb-sm-0" data-inject-svg>
-              <div class="ml-sm-3 ml-md-4">
-                <h5>Authentication and Storage</h5>
-                <p>
-                  Supercharge your application in minutes by using SimpleID to add authentication and decentralized storage.
-                </p>
-                <a onclick="logButton('Try The Demo')" href="https://www.simpleid.xyz/demo" target="_blank" class="btn btn-sm btn-primary">Try The Demo</a>
+
+          <div class="col-sm-6 col-lg-4 mb-3 mb-md-4" data-isotope-item>
+            <div class="card card-body">
+              
+              <div class="d-flex">
+                
+                <div class="ml-3">
+                  <img style="max-width: 50%; margin-bottom: 15px;" src="assets/img/partners/Moonpay.png" alt="Moonpay">
+                  <p class="mb-0">Because MoonPay is built into SimpleID, you can offer in-app crypto purchases to all your users. Need to allow high buy totals? Our partnership enables full KYC.</p>
+                  <div><a onclick="logButton('Graphite')" href="https://graphitedocs.com" target="_blank">Learn more about MoonPay</a></div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-6 mb-3 mb-md-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="card card-body bg-white align-items-start flex-sm-row h-100">
-              <img src="assets/img/icons/theme/design/layers.svg" alt="Icon for Layers" class="icon bg-primary mb-4 mb-sm-0" data-inject-svg>
-              <div class="ml-sm-3 ml-md-4">
-                <h5>Scales With You</h5>
-                <p>
-                  Start for free and when your application gains traction, scale up to support it. We offer simple, transparent pricing.
-                </p>
-                <a onclick="logButton('See Pricing')" href="#pricing" class="btn btn-sm btn-primary">See Pricing</a>
+
+          <div class="col-sm-6 col-lg-4 mb-3 mb-md-4" data-isotope-item>
+            <div class="card card-body">
+              
+              <div class="d-flex">
+                
+                <div class="ml-3">
+                  <img style="max-width: 50%;margin-bottom: 15px" src="assets/img/partners/3Box.png" alt="Textile">
+                  <p class="mb-0">With 3Box, you get IPFS-based data portability tied to your Ethereum account. SimpleID lets your users connect to 3Box with just an email address.</p>
+                  <div><a onclick="logButton('Graphite')" href="https://graphitedocs.com" target="_blank">Learn more about Ethereum</a></div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-6 mb-3 mb-md-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="card card-body bg-white align-items-start flex-sm-row h-100">
-              <img src="assets/img/icons/theme/communication/chat-smile.svg" alt="Icon for Chat-Smile" class="icon bg-primary mb-4 mb-sm-0" data-inject-svg>
-              <div class="ml-sm-3 ml-md-4">
-                <h5>Friendly Developer Community</h5>
-                <p>
-                  We have a friendly community of developers building awesome projects. Come join our Slack and become part of the team.
-                </p>
-                <a onclick="logButton('Join Our Slack')" href="https://join.slack.com/t/simpleidxyz/shared_invite/enQtNzUzOTExMzI2OTQ5LTZhM2I2NzhjMTllYjMzZTg5YmYzOTNiNzBiY2E3MDQyNjU3NTU3Y2VkOGY2OWM2NzJhOWJmOGEyNDczM2VkZjc" class="btn btn-sm btn-primary" target="_blank">Join Our Slack</a>
+
+          <div class="col-sm-6 col-lg-4 mb-3 mb-md-4" data-isotope-item>
+            <div class="card card-body">
+              
+              <div class="d-flex">
+                
+                <div class="ml-3">
+                  <img style="max-width: 50%; margin-bottom: 10px" src="assets/img/partners/Matic.png" alt="Matic">
+                  <p class="mb-0">By incorporating Matic into SimpleID, your applications can handle orders of magnitude more transactions per second than the Layer 1 Ethereum Network.</p>
+                  <div><a onclick="logButton('Graphite')" href="https://graphitedocs.com" target="_blank">Learn more about Matic</a></div>
+                </div>
               </div>
             </div>
           </div>
+
+          <div class="col-sm-6 col-lg-4 mb-3 mb-md-4" data-isotope-item>
+            <div class="card card-body">
+              
+              <div class="d-flex">
+                
+                <div class="ml-3">
+                  <img style="max-width: 50%; border: 0.4px solid #ddd; border-radius: 5px; margin-bottom: 10px" src="assets/img/partners/Textile.png" alt="Textile">
+                  <p class="mb-0">Our partnership with Textile means you get an encrypted database service on top of IPFS out of the box, with full account recovery and backup.</p>
+                  <div><a onclick="logButton('Graphite')" href="https://graphitedocs.com" target="_blank">Learn more about Textile</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 mb-3 mb-md-4" data-isotope-item>
+            <div class="card card-body">
+              
+              <div class="d-flex">
+                
+                <div class="ml-3">
+                  <img style="max-width: 50%; max-height: 135px;margin-bottom: 10px" src="assets/img/partners/Ethereum.png" alt="Textile">
+                  <p class="mb-0">SimpleID is cross-blockchain, but with the majority of blochcian development happening on Ethereum, we provide first-class support for Ethereum devs.</p>
+                  <div><a onclick="logButton('Graphite')" href="https://graphitedocs.com" target="_blank">Learn more about Ethereum</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
+        <div style="margin-top: 15px;" class="text-white row section-title justify-content-center text-center">
+            <div class="col-md-9 col-lg-8 col-xl-7">
+              <h3 class="display-4">And Many More</h3>
+            </div>
+          </div>
       </div>
-    </section>
-
-    <section id="examples">
-      <div class="container">
-        <div class="row section-title justify-content-center text-center mb-3">
-          <div class="col-md-9 col-lg-8 col-xl-7">
-            <h3 class="display-4">Get Started in Minutes</h3>
-            <div class="lead">We believe developers should focus on their users, so we've made integrating SimpleID easy.  Here's an example that creates and signs in a new user.</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <div class="py-2 p-lg-4 p-xl-5 rounded bg-secondary text-center">
-              <blockquote class="embedly-card" data-card-width="100%"><h4><a href="https://runkit.com/polluterofminds/simpleid-node-sdk">RunKit</a></h4><p>RunKit notebooks are interactive javascript playgrounds connected to a complete node environment right in your browser. Every npm module pre-installed.</p></blockquote>
-              <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
-              <div class="d-inline-block lead">There's even more on <a onclick="logLink('GitHub')" href="https://github.com/simplesecure" class="hover-fade-out" target="_blank">GitHub <img src="assets/img/icons/social/github.svg" alt="Github" class="icon icon-sm bg-primary" data-inject-svg></a> to help you get started.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-primary-3 pb-0">
-
-        <div class="container">
+      <div class="divider divider-bottom"></div>
+        <!--<div class="container">
           <div class="text-white">
             <div class="row section-title justify-content-center text-center">
               <div class="col-md-9 col-lg-8 col-xl-7">
@@ -411,34 +791,32 @@
 
           </div>
         </div>
-        <div class="divider divider-bottom"></div>
+        <div class="divider divider-bottom"></div>-->
     </section>
-
     <section id="pricing">
     <div data-overlay class="o-hidden">
           <div class="container">
             <div class="row text-center justify-content-center">
               <div class="col">
-                <h1 class="display-3">Pricing that scales with you</h1>
+                <h1 class="display-3">Priced to help you scale</h1>
               </div>
             </div>
             <div class="row text-center justify-content-center">
               <div class="col-md-9 col-lg-8 col-xl-7">
-                <p class="lead">Start free and let us grow along side you.</p>
+                <p class="lead">Start with a free 14-day trial.</p>
               </div>
             </div>
           </div>
 
           <div class="container">
             <div class="row justify-content-center">
-            <div class="col-sm-9 col-md-7 col-lg-4 mb-3 mb-md-4 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+ 
+            <div class="col-sm-9 col-md-9 col-lg-6 mb-3 mb-md-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
               <div class="card card-body align-items-center shadow">
-
                 <div class="text-center mb-4">
-                  <h4>Silver</h4>
                   <div class="d-flex align-items-center justify-content-center mb-1">
                     <span class="h5 mb-0 mr-2">$</span>
-                    <span class="display-3 mb-0 text-dark">0</span>
+                    <span class="display-3 mb-0 text-dark">99</span>
                   </div>
                   <div>Per month</div>
                 </div>
@@ -448,7 +826,7 @@
                       <div class="rounded-circle bg-success-alt">
                         <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
                       </div>
-                      <h6 class="mb-0 ml-3">Ethereum, Blockstack, Textile authentication</h6>
+                      <h6 class="mb-0 ml-3">Unlimited Users</h6>
                     </div>
                   </li>
                   <li class="my-3">
@@ -456,78 +834,7 @@
                       <div class="rounded-circle bg-success-alt">
                         <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
                       </div>
-                      <h6 class="mb-0 ml-3">Blockstack and IPFS storage</h6>
-                    </div>
-                  </li>
-                  <li class="my-3">
-                    <div class="d-flex align-items-center">
-                      <div class="rounded-circle bg-success-alt">
-                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
-                      </div>
-                      <h6 class="mb-0 ml-3">5mb limit for pinned files</h6>
-                    </div>
-                  </li>
-                  <li class="my-3">
-                    <div class="d-flex align-items-center">
-                      <div class="rounded-circle bg-success-alt">
-                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
-                      </div>
-                      <h6 class="mb-0 ml-3">One project</h6>
-                    </div>
-                  </li>
-                  <li class="my-3">
-                    <div class="d-flex align-items-center">
-                      <div class="rounded-circle bg-success-alt">
-                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
-                      </div>
-                      <h6 class="mb-0 ml-3">500 users</h6>
-                    </div>
-                  </li>
-                  <li class="my-3 opacity-50">
-                    <div class="d-flex align-items-center">
-                      <div class="rounded-circle bg-danger-alt">
-                        <img src="assets/img/icons/interface/icon-x.svg" alt=" icon=" class="m-2 icon icon-xs bg-danger" data-inject-svg>
-                      </div>
-                      <h6 class="mb-0 ml-3">Dedicated Support</h6>
-                    </div>
-                  </li>
-                  <li class="my-3 opacity-50">
-                    <div class="d-flex align-items-center">
-                      <div class="rounded-circle bg-danger-alt">
-                        <img src="assets/img/icons/interface/icon-x.svg" alt=" icon=" class="m-2 icon icon-xs bg-danger" data-inject-svg>
-                      </div>
-                      <h6 class="mb-0 ml-3">Enterprise SLA</h6>
-                    </div>
-                  </li>
-                </ul>
-                <a onclick="logButton('Start With Silver')" href="#app" class="btn btn-lg btn-block btn-outline-primary">Start With Silver</a>
-              </div>
-            </div>
-            <div class="col-sm-9 col-md-7 col-lg-4 mb-3 mb-md-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
-              <div class="card card-body align-items-center shadow">
-                <div class="text-center mb-4">
-                  <h4><span class="badge badge-success badge-pill">Best Value</span>&nbsp;&nbsp;Gold</h4>
-                  <div class="d-flex align-items-center justify-content-center mb-1">
-                    <span class="h5 mb-0 mr-2">$</span>
-                    <span class="display-3 mb-0 text-dark">9</span>
-                  </div>
-                  <div>Per month</div>
-                </div>
-                <ul class="list-unstyled p-0">
-                  <li class="my-3">
-                    <div class="d-flex align-items-center">
-                      <div class="rounded-circle bg-success-alt">
-                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
-                      </div>
-                      <h6 class="mb-0 ml-3">All free plan features</h6>
-                    </div>
-                  </li>
-                  <li class="my-3">
-                    <div class="d-flex align-items-center">
-                      <div class="rounded-circle bg-success-alt">
-                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
-                      </div>
-                      <h6 class="mb-0 ml-3">100mb limit for pinned files</h6>
+                      <h6 class="mb-0 ml-3">No Limit on Pinned File Sizes</h6>
                     </div>
                   </li>
                   <li class="my-3">
@@ -551,7 +858,7 @@
                       <div class="rounded-circle bg-success-alt">
                         <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
                       </div>
-                      <h6 class="mb-0 ml-3">10,000 users</h6>
+                      <h6 class="mb-0 ml-3">Instant Blockchain Transactions</h6>
                     </div>
                   </li>
                   <li class="my-3">
@@ -559,39 +866,7 @@
                       <div class="rounded-circle bg-success-alt">
                         <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
                       </div>
-                      <h6 class="mb-0 ml-3">Email Support</h6>
-                    </div>
-                  </li>
-                  <li class="my-3 opacity-50">
-                    <div class="d-flex align-items-center">
-                      <div class="rounded-circle bg-danger-alt">
-                        <img src="assets/img/icons/interface/icon-x.svg" alt=" icon=" class="m-2 icon icon-xs bg-danger" data-inject-svg>
-                      </div>
-                      <h6 class="mb-0 ml-3">Enterprise SLA</h6>
-                    </div>
-                  </li>
-                </ul>
-                <a onclick="logButton('Get The Gold Plan')" href="#app" class="btn btn-lg btn-block btn-primary">Get The Gold Plan</a>
-              </div>
-            </div>
-            <div class="col-sm-9 col-md-7 col-lg-4 mb-3 mb-md-4 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
-              <div class="card card-body align-items-center shadow">
-
-                <div class="text-center mb-4">
-                  <h4>Platinum</h4>
-                  <div class="d-flex align-items-center justify-content-center mb-1">
-                    <span class="h5 mb-0 mr-2">$</span>
-                    <span class="display-3 mb-0 text-dark">XX</span>
-                  </div>
-                  <div>Per month</div>
-                </div>
-                <ul class="list-unstyled p-0">
-                  <li class="my-3">
-                    <div class="d-flex align-items-center">
-                      <div class="rounded-circle bg-success-alt">
-                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
-                      </div>
-                      <h6 class="mb-0 ml-3">All Gold plan features</h6>
+                      <h6 class="mb-0 ml-3">In-App Crypto Purchases</h6>
                     </div>
                   </li>
                   <li class="my-3">
@@ -599,31 +874,7 @@
                       <div class="rounded-circle bg-success-alt">
                         <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
                       </div>
-                      <h6 class="mb-0 ml-3">No limit on pinned files</h6>
-                    </div>
-                  </li>
-                  <li class="my-3">
-                    <div class="d-flex align-items-center">
-                      <div class="rounded-circle bg-success-alt">
-                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
-                      </div>
-                      <h6 class="mb-0 ml-3">Unlimited users</h6>
-                    </div>
-                  </li>
-                  <li class="my-3">
-                    <div class="d-flex align-items-center">
-                      <div class="rounded-circle bg-success-alt">
-                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
-                      </div>
-                      <h6 class="mb-0 ml-3">Custom Analytics</h6>
-                    </div>
-                  </li>
-                  <li class="my-3">
-                    <div class="d-flex align-items-center">
-                      <div class="rounded-circle bg-success-alt">
-                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
-                      </div>
-                      <h6 class="mb-0 ml-3">White label communication</h6>
+                      <h6 class="mb-0 ml-3">KYC/AML Support</h6>
                     </div>
                   </li>
                   <li class="my-3">
@@ -642,31 +893,22 @@
                       <h6 class="mb-0 ml-3">Enterprise SLA</h6>
                     </div>
                   </li>
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">And more...</h6>
+                    </div>
+                  </li>
                 </ul>
-                <a onclick="logButton('Contact Us Platinum')" href="mailto:hello@simpleid.xyz?subject=I%20am%20interested%20in%20SimpleID%20Platinum" class="btn btn-lg btn-block btn-outline-primary">Contact Us</a>
+                <a onclick="logButton('Get The Gold Plan')" href="#app" class="btn btn-lg btn-block btn-primary">Start Your 14-Day Trial</a>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="app" class="bg-primary-3 pb-0">
-      <div class="container">
-        <div class="text-white">
-          <div class="row justify-content-center text-center">
-            <div class="col-md-9 col-lg-8 col-xl-7">
-              <h3 class="display-4">Get started here now!</h3>
-              <div class="lead mb-4">Fill in this form to get an email confirming your account and access to Web 3.0 authentication, storage, smart contracts, and more for your App's users!</div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div id="devPortalIFrame" class="d-flex flex-column pr-0 pl-0">
           </div>
         </div>
       </div>
-      <div class="divider divider-bottom"></div>
     </section>
 
     <footer class="pb-4 footer-1">

@@ -304,6 +304,13 @@ template {
 [hidden] {
   display: none !important; }
 
+.ph-button {
+  position: fixed;
+  bottom: 30px;
+  left: 15px;
+  z-index: 999;
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 1rem;
@@ -7607,6 +7614,9 @@ a.card {
 .bg-gradient {
   background: linear-gradient(to right, #2568EF, #FF564F) !important; }
 
+.bg-gradient-1 {
+  background: linear-gradient(to right, #c0cfff, #003dff) !important;
+}
 .bg-primary-alt {
   background-color: rgba(37, 104, 239, 0.1); }
 
