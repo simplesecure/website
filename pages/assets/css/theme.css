@@ -13473,3 +13473,47 @@ pre[class*="language-"] {
   word-break: break-word; }
 
 /*# sourceMappingURL=theme.css.map */
+
+.stats-text {
+  font-size: 18px!important;
+}
+
+.stats-p {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.chart-img img{
+  margin-top: 20px;
+  border: 1px #eee solid;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 65%;
+  margin: auto;
+}
+
+.card-example {
+  padding: 20px;
+}
+
+.problem-section-header {
+  margin-top: 45px;
+}
+
+.savings-text {
+  margin-top: 35px;
+}
+
+#savings {
+  color: green;
+  font-size: 26px;
+}
+
+.logo-bar {
+  max-height: 50px;
+  position: relative;
+  top: -8px;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
