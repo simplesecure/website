@@ -13528,6 +13528,10 @@ pre[class*="language-"] {
   height: 500px;
 }
 
+.product-gifs {
+  width: 100%!important;
+}
+
 @media (min-width: 250) {
   .logo-bar {
     max-height: 50px;
