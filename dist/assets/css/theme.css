@@ -13530,6 +13530,7 @@ pre[class*="language-"] {
 
 .product-gifs {
   width: 100%!important;
+  margin: auto;
 }
 
 @media (min-width: 250) {
