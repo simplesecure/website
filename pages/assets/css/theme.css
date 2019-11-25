@@ -13533,6 +13533,114 @@ pre[class*="language-"] {
   margin: auto;
 }
 
+.brand {
+  max-width: 250px;
+}
+
+.solutions-list {
+  list-style-type: none;
+  text-align: left!important;
+  margin-left: -45px;
+}
+
+.solutions-list li {
+  font-size: 18px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.solutions-list li:hover {
+  text-decoration: underline;
+}
+
+.solutions-sub-list {
+  list-style-type: none;
+}
+
+.solutions-sub-list li {
+  font-size: 16px;
+  margin-left: -20px;
+}
+
+.solutions-sub-list li:hover {
+  text-decoration: none;
+}
+
+.sol-extra-card {
+  padding: 7px;
+}
+
+.sol-car img {
+  width: 50px!important;
+}
+
+.badge {
+  font-size: 12px!important;
+}
+
+.half-width {
+  max-width: 50%!important;
+  margin: auto!important;
+}
+
+.three-quarter-width {
+  max-width: 75%!important;
+  margin: auto!important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #282828!important;
+}
+
+.pulse-button {
+  position: absolute;
+  top: 95px;
+  left: 45px;
+  margin-left: -50px;
+  margin-top: -50px;
+  display: block;
+  width: 55px;
+  height: 55px;
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 100px;
+  letter-spacing: -1px;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  background: #5a99d4;
+  box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5);
+  -webkit-animation: pulse 1.5s infinite;
+}
+
+.sign-up-form {
+  max-width: 55%;
+  margin: auto;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  70% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+  }
+  100% {
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+  }
+}
+
 @media (min-width: 250) {
   .logo-bar {
     max-height: 50px;
@@ -13545,12 +13653,20 @@ pre[class*="language-"] {
 }
 
 @media only screen and (max-width: 500px) {
-  #hero-section {
-    margin-top: 25px!important;
-  }
-
   .repl-frame {
     max-width: 95%;
     margin: auto;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  #hero-section {
+    margin-top: 85px!important;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  #hero-section {
+    margin-top: 85px!important;
   }
 }
