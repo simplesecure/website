@@ -13609,8 +13609,11 @@ pre[class*="language-"] {
   border: none;
   border-radius: 50%;
   background: #5a99d4;
+  opacity: 0.5;
   box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5);
-  -webkit-animation: pulse 1.5s infinite;
+  -webkit-animation-name: pulse; 
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
 }
 
 .sign-up-form {
