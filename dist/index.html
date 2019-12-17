@@ -16,7 +16,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/icons/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon.ico">
-  
+
     <link rel="manifest" href="/manifest.json">
     <meta name="description" content="Don't just get people to sign up for your blockchain apps, make sure they want to come back again and again.">
     <meta name="keywords" content="Authentication, Storage, Secure, Oauth, Simple, Encryption, Blockstack, Ethereum, Blockchain, Decentralization, Engagement, Re-engagement, Retention, Analytics">
@@ -259,7 +259,7 @@
                     <input id="email" class="form-control form-control-lg h-100" type="email" name="get-started-email" placeholder="Email Address">
                     <button class="btn btn-lg btn-primary mt-2 mt-md-0 ml-md-3 flex-shrink-0" type="submit">Learn More</button>
                   </form>
-                </div>                
+                </div>
                 <div style="display: none;" id="sign-up-confirm">
                   <p class="lead"><mark>Thank you for signing up! We'll send you your API key and documentation soon.</mark></p>
                 </div>
@@ -333,7 +333,7 @@
       <div class="col-sm-12 text-center">
         <p class="text-muted text-small">According to a survey of blockchain app developers by Fluence Labs</p>
       </div>
-      
+
       <div class="divider divider-bottom bg-light"></div>
     </section>
 
@@ -393,45 +393,45 @@
 
                     <div class="col-md-8" style="display: none;" id="social">
                       <div class="p-3 p-md-5">
-                        <img class="half-width" src="assets/img/socialauth.png" alt="Social auth" />                
+                        <img class="half-width" src="assets/img/socialauth.png" alt="Social auth" />
                       </div>
                     </div>
 
                     <div class="col-md-8" style="display: none;" id="notifications">
                       <div class="p-3 p-md-5">
-                        <img class="three-quarter-width" src="assets/img/notification.png" alt="Example notification" />                     
+                        <img class="three-quarter-width" src="assets/img/notification.png" alt="Example notification" />
                       </div>
-                    </div> 
+                    </div>
 
                     <div class="col-md-8" style="display: none;" id="insights">
                       <div class="p-3 p-md-5">
                         <img class="three-quarter-width" src="assets/img/analytics.jpg" alt="Analytics" />
                       </div>
-                    </div> 
+                    </div>
 
                     <div class="col-md-8" style="display: none;" id="re-engagement">
                       <div class="p-3 p-md-5">
                         <img class="three-quarter-width" src="assets/img/engage_blue.png" alt="Example code" />
                       </div>
-                    </div> 
-                          
-                  </div>                
+                    </div>
+
+                  </div>
                 </div>
                 <!-- <hr />
                 <br />
                 <h2 id="see-it" class="h2">Simple onboarding starts with simple code</h2>
                 <p>The code below is all you need. Click run to execute and see the execution output.</p>
-                <div class="repl-frame">                  
+                <div class="repl-frame">
                   <iframe class="repl-iframe" src="https://repl.it/@pbj/SimpleIDDemo?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
                 </div>                -->
               </div>
             </div>
-            
+
           </div>
         </div>
         <div class="divider divider-bottom bg-white mt-5"></div>
       </section>
-    
+
     <!--<section class="bg-primary-3 text-white jarallax pb-0" data-jarallax data-speed="0.2">
       <img src="assets/img/heros/hero-1.jpg" alt="Image" class="jarallax-img opacity-50">
       <div class="container pb-5">
@@ -526,7 +526,7 @@
       <div class="container">
         <div class="row section-title justify-content-center text-center">
           <div class="col-md-9 col-lg-8 col-xl-7">
-            <h3 class="display-4">Customers Love Us</h3>            
+            <h3 class="display-4">Customers Love Us</h3>
           </div>
         </div>
       </div>
@@ -751,52 +751,52 @@
       function handleSolution(solution) {
         document.getElementById('feature-disc').style.display = "none";
         document.getElementById(solution).style.display = "block";
-        
+
         if(document.getElementById(`${solution}-extra`).style.display === "block") {
           document.getElementById(`${solution}-extra`).style.display = "none";
         } else {
           document.getElementById(`${solution}-extra`).style.display = "block";
         }
-        
+
 
         const solutions = [
-          "passwordless", 
+          "passwordless",
           "social",
-          "notifications", 
-          "insights", 
+          "notifications",
+          "insights",
           "re-engagement"
         ]
         const subSolutions = [
-          "passwordless-extra", 
-          "social-extra", 
-          "notifications-extra", 
-          "insights-extra", 
+          "passwordless-extra",
+          "social-extra",
+          "notifications-extra",
+          "insights-extra",
           "re-engagement-extra"
         ]
         const hiddenSolutions = solutions.filter(a => a !== solution);
         const hiddenSubSolutions = subSolutions.filter(b => b !== `${solution}-extra`);
-        
+
         for(const hiddenSolution of hiddenSolutions) {
           document.getElementById(hiddenSolution).style.display = "none";
         }
         for(const hiddenSubSolution of hiddenSubSolutions) {
           document.getElementById(hiddenSubSolution).style.display = "none";
         }
-        
+
       }
     </script>
     <script type="text/javascript">
       const savingsTable = {
-        "75": "$15,150.00", 
-        "90": "$18,180.00", 
-        "105": "$21,210.00", 
-        "120": "$24,240.00", 
-        "135": "$27,270.00", 
-        "150": "$30,300.00", 
-        "165": "$33,330.00", 
-        "180": "$36,360.00", 
-        "195": "$39,390.00", 
-        "210": "$42,420.00", 
+        "75": "$15,150.00",
+        "90": "$18,180.00",
+        "105": "$21,210.00",
+        "120": "$24,240.00",
+        "135": "$27,270.00",
+        "150": "$30,300.00",
+        "165": "$33,330.00",
+        "180": "$36,360.00",
+        "195": "$39,390.00",
+        "210": "$42,420.00",
         "225": "$45,450.00"
       }
       var rate = "80";
@@ -806,7 +806,7 @@
         rate = "225";
         document.getElementById('savings').innerText = savingsTable[rate];
       });
-      
+
       function handleSliderChange() {
         console.log(dataSlider.value);
         rate = dataSlider.value;
@@ -828,9 +828,9 @@
         const month = today.getMonth() + 1;
         const year = today.getFullYear();
         const monthDayYear = month + "/" + day + "/" + year;
-        
+
         const payload = {
-          email: email.value, 
+          email: email.value,
           date: monthDayYear
         }
         //Make request to send email address here

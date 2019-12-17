@@ -13611,7 +13611,7 @@ pre[class*="language-"] {
   background: #5a99d4;
   opacity: 0.5;
   box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5);
-  -webkit-animation-name: pulse; 
+  -webkit-animation-name: pulse;
   -webkit-animation-duration: 1.5s;
   -webkit-animation-iteration-count: infinite;
 }
