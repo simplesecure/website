@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="description" content="Add Web 3.0 technology to your application in under 10 minutes. Authentication, storage, smart contracts, blockchain transactions, and more.">
+    <meta name="keywords" content="Authentication, Storage, Secure, Oauth, Simple, Encryption, Blockstack, Ethereum, Blockchain, Decentralization">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.simpleid.xyz">
+    <meta name="twitter:site" content="@stealthyinc">
+    <meta name="twitter:title" content="SimpleID: Amplify Your User Growth">
+    <meta name="twitter:description" content="Add Web 3.0 technology to your application in under 10 minutes. Authentication, storage, smart contracts, blockchain transactions, and more.">
+    <meta name="twitter:image" content="https://www.simpleid.xyz/assets/img/OGCard1.png">
+    <title>SimpleID - Decentralization Simplified</title>
+    <!-- Begin loading animation -->
+    <link href="assets/css/loaders/loader-pulse.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- End loading animation -->
+    <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,600,700&display=swap" rel="stylesheet">
+
+    <!--Dev/Prod setup-->
+    <script type="text/javascript">
+      const hostName = window.location.hostname
+      const isDevelopment = (hostName === '' || hostName === 'localhost' || hostName === '127.0.0.1');
+
+      const amplitudeKey = (isDevelopment) ? 'f44acee7b5df07742070770017e1cc64' :
+                                             'cacaa44d1730abe2439279a160e5e8c1';
+    </script>
+
+    <!--Amplitude - inline for perf. -->
+  	<script type="text/javascript">
+  	  (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
+  	  ;r.type="text/javascript"
+  	  ;r.integrity="sha384-d/yhnowERvm+7eCU79T/bYjOiMmq4F11ElWYLmt0ktvYEVgqLDazh4+gW9CKMpYW"
+  	  ;r.crossOrigin="anonymous";r.async=true
+  	  ;r.src="https://cdn.amplitude.com/libs/amplitude-5.2.2-min.gz.js"
+  	  ;r.onload=function(){if(!e.amplitude.runQueuedFunctions){
+  	  console.log("[Amplitude] Error: could not load SDK")}}
+  	  ;var i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)
+  	  ;function s(e,t){e.prototype[t]=function(){
+  	  this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}
+  	  var o=function(){this._q=[];return this}
+  	  ;var a=["add","append","clearAll","prepend","set","setOnce","unset"]
+  	  ;for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[]
+  	  ;return this}
+  	  ;var l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"]
+  	  ;for(var p=0;p<l.length;p++){s(c,l[p])}n.Revenue=c
+  	  ;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","groupIdentify","onInit","logEventWithTimestamp","logEventWithGroups","setSessionId","resetSessionId"]
+  	  ;function v(e){function t(t){e[t]=function(){
+  	  e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}
+  	  for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){
+  	  e=(!e||e.length===0?"$default_instance":e).toLowerCase()
+  	  ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
+  	  ;e.amplitude=n})(window,document);
+  		//
+
+  	  amplitude.getInstance().init(
+  			amplitudeKey, null, { includeReferrer: true, includeUtm: true } );
+  		//
+  		function dbgLog(aString) {
+  	    if (isDevelopment) { console.log(aString); }
+  		}
+  	</script>
+
+  	<!-- Amplitude helper functionality -->
+  	<script>
+  		const simpleIdSystemVersion = "1.0.2"
+  		amplitude.getInstance().setVersionName(simpleIdSystemVersion)
+  		//
+  		let lastPageVisited = getPageName()
+  		//
+  		// Returns the page name (i.e. reference / anchor on the site). For example,
+  		// if the URL is .../index.html#cheese, this returns #cheese.
+  		//
+  		function getPageName() {
+  			const pageName = window.location.hash
+  			return (!pageName) ? '#home' : pageName
+  		}
+      //
+      let sourceEventProperties = {}
+      try {
+        const urlString = window.location.href
+        const url = new URL(urlString)
+        const tCode = url.searchParams.get('t')
+        const sCode = url.searchParams.get('s')
+
+        if (sCode) {
+          sourceEventProperties['s_code'] = sCode
+        }
+        if (tCode) {
+          sourceEventProperties['t_code'] = tCode
+
+          // Set the user property tCode for backward compatibility with
+          // earlier versions of our Analytics.
+          const identity = new amplitude.Identify().set('tCode', tCode)
+          amplitude.getInstance().identify(identity)
+        }
+      } catch (suppressedError) {
+        console.log(`tCode / sCode - suppressedError: ${suppressedError}`)
+      }
+      //
+      // Wrapper to differentiate events from our different sites:
+      //   MKT - Marketing
+      //   DAS - Developer Dashboard
+      //   HLO - Hello App
+      //
+      const eventPrefix = 'MKT'
+      //
+      function logEvent(anEventName, theEventProperties={}) {
+        const eventName = `${eventPrefix} ${anEventName}`
+
+        // All events have source properties attached now, so merge those in.
+        const mergedEventProperties =
+          Object.assign(theEventProperties, sourceEventProperties)
+
+        let sMergedEventProperties = ''
+        try {
+          sMergedEventProperties = JSON.stringify(mergedEventProperties)
+        } catch (suppressedError) {}
+        dbgLog(`DBG(logEvent): ${eventName}, ${sMergedEventProperties}`)
+
+        amplitude.getInstance().logEvent(eventName, mergedEventProperties)
+      }
+  		//
+  		// Listen for & identify navigation changes
+  		//
+  		document.onmouseover = function() {
+        window.innerDocClick = true		// User's mouse is inside the page.
+      }
+      //
+      document.onmouseleave = function() {
+        window.innerDocClick = false	// User's mouse has left the page.
+      }
+      //
+      window.addEventListener('hashchange', function(event) {
+        const page = getPageName()
+  			const eventProperties = {
+  				'previousPage': lastPageVisited,
+  				'trigger': (window.innerDocClick ? 'site content' : 'browser button')
+  			}
+        var eventName = `${page} Visited`
+  			logNavigate(page, eventProperties)
+
+  			lastPageVisited = page
+      }, false);
+  		//
+  		// Log the unloading of our page
+  		window.onunload = function() {
+  			const eventProperties = {
+  				'page': getPageName()
+  			}
+  			logEvent('Site exited', eventProperties)
+  		}
+  		//
+  		function logNavigate(page='', eventProperties={}) {
+  			if (page) {
+  				logEvent(`${page} visited.`, eventProperties)
+  			}
+  		}
+  		//
+  		function logButton(buttonName) {
+  			logClick(`${buttonName} button pressed`)
+  		}
+  		//
+  		function logLink(linkName) {
+  			logClick(`${linkName} link clicked`)
+  		}
+  		//
+  		function logClick(clickEventName, eventProperties={}) {
+  			if (clickEventName) {
+  				eventProperties['page'] = getPageName()
+  				logEvent(clickEventName, eventProperties)
+  			}
+  		}
+      //
+      function logSiteLoad() {
+        logEvent('Site Loaded')
+        logNavigate(getPageName())
+      }
+  		//
+  		logSiteLoad()
+  	</script>
+  </head>
+
+  <body>
+    <div class="loader">
+      <div class="loading-animation"></div>
+    </div>
+    <div class="navbar-container">
+      <nav class="navbar navbar-expand-lg navbar-light" data-overlay data-sticky="top">
+        <div class="container">
+          <a onclick="logButton('Header Logo')" class="navbar-brand navbar-brand-dynamic-color" href="/index.html">
+            <img alt="SimpleID" data-inject-svg src="assets/img/logos/simpleid.svg">
+          </a>
+          <div class="d-flex align-items-center order-lg-3">
+            <a onclick="logButton('Header Start For Free')" href="index.html#start" class="btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3">Start For Free</a>
+            <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+              <img alt="Navbar Toggler Open Icon" class="navbar-toggler-open icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-menu.svg">
+              <img alt="Navbar Toggler Close Icon" class="navbar-toggler-close icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-x.svg">
+            </button>
+          </div>
+          <div class="collapse navbar-collapse order-3 order-lg-2 justify-content-lg-end" id="navigation-menu">
+            <ul class="navbar-nav my-3 my-lg-0">
+              <li class="nav-item">
+                <a onclick="logButton('Header Features')" aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="index.html#features" role="button">Features</a>
+              </li>
+              <li class="nav-item">
+                <a onclick="logButton('Header Examples')" aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="index.html#see-it" role="button">Try It</a>
+              </li>
+              <li class="nav-item">
+                <a onclick="logButton('Header Blog')" aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="https://medium.com/simpleid-dev-tools" target="_blank" role="button">Blog</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+<section id="examples">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h3 class="h1">Frequently Asked Questions</h3>
+        <p>Or questions we think you might ask and want to help you answer in advance 😊</p>
+      </div>
+    </div>
+    <div class="row mt-4 mt-md-5">
+      <div class="col">
+        <div class="py-2 p-lg-4 p-xl-5 rounded bg-secondary">
+          <!-- <p class="tiny "><span class="opacity-8">Please read these Terms and Conditions (“Terms”, “Terms and Conditions”) carefully before using the http://designmodo.com website (the “Service”) operated by Designmodo Inc. (“us”, “we”, or “our”). Your access to and use of the Service is conditioned upon your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who wish to access or use the Service.</span></p> -->
+          <h2 class="light margin-top-4 margin-bottom-2">How decentralized is this?</h2>
+          <p class="tiny"><span class="opacity-8">SimpleID the service is not decentralized. It is a custodial solution offering developers, and in turn their users, access to decentralized protocols. However, the apps built using SimpleID can be every bit as decentralized as those not built with SimpleID.</span></p>
+
+          <h2 class="light margin-top-4 margin-bottom-2">What happens if SimpleID goes away?</h2>
+          <p class="tiny"><span class="opacity-8">Developers will be able to integrate with the base protocols of the services they've been using through SimpleID should SimpleID ever go away. This will surely require a change to the authentication flow and experience for end users, but there is a path forward in the unlikely event that SimpleID's service disappears. User accounts are not lost.</span></p>
+
+          <h2 class="light margin-top-4 margin-bottom-2">Do you support Smart Contracts?</h2>
+          <p class="tiny"><span class="opacity-8">Yes, we do. Anything you can do with a smart contract, you can do via SimpleID. Deploy contracts, let users interact with contracts, and choose any network (testnet, mainnet, layer 2).</span></p>
+					<p class="tiny"><span class="opacity-8">Note: All smart contract functions take place on the ropsten testnet for the time being.</span></p>
+
+          <h2 class="light margin-top-4 margin-bottom-2">What are the benefits to using SimpleID as a developer?</h2>
+          <!-- <p class="tiny"><span class="opacity-8">There are quite a few: -->
+						<ul><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><circle fill="#010101" cx="12" cy="12" r="8"/></svg> You don't have to maintain a DB of usernames and passwords</ul>
+						<ul><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><circle fill="#010101" cx="12" cy="12" r="8"/></svg> You don't have to store sensitive user information</ul>
+						<ul><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><circle fill="#010101" cx="12" cy="12" r="8"/></svg> Takes just 10 minutes to get started</ul>
+						<ul><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><circle fill="#010101" cx="12" cy="12" r="8"/></svg> You can give users access to multiple decentralized technologies without having to build custom solutions for each</ul>
+						<ul><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><circle fill="#010101" cx="12" cy="12" r="8"/></svg> You get free storage for your users via Blockstack and IPFS (up to certain limits)</ul>
+						<ul><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><circle fill="#010101" cx="12" cy="12" r="8"/></svg> You can give your users control of their data</ul>
+						<ul><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><circle fill="#010101" cx="12" cy="12" r="8"/></svg> Encrypting content is easy since every user identity has encryption keys specific to your application</ul>
+					</span></p>
+
+          <h2 class="light margin-top-4 margin-bottom-2">How is SimpleID different from...?</h2>
+          <!-- <p class="tiny"><span class="opacity-8">There are so many things SimpleID can be compared to, but let's cover a few: -->
+						<ul><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><circle fill="#010101" cx="12" cy="12" r="8"/></svg> Auth0 - SimpleID provides access to decentralized protocols, Auth0 does not</ul>
+						<ul><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><circle fill="#010101" cx="12" cy="12" r="8"/></svg> OpenID - SimpleID is not built atop OAuth 2.0 (but SimpleID supports OAuth implementations) like OpenID and OpenID does not provide Web 3.0 access </ul>
+						<ul><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><circle fill="#010101" cx="12" cy="12" r="8"/></svg> Keybase - SimpleID uses a lot of similar cryptography, but we use it largely from the underlying protocols we serve (i.e. Blockstack, Ethereum, etc).</ul>
+						<ul><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"><circle fill="#010101" cx="12" cy="12" r="8"/></svg> WebAuthn - SimpleID gives users a decentralized identifier that they control. This also gives them access to Web 3.0 protocols that would not be available via the WebAuthn spec.</ul>
+					</span></p>
+
+					<h2 class="light margin-top-4 margin-bottom-2">Can I bring my existing decentralized identity to an app using SimpleID?</h2>
+          <p class="tiny"><span class="opacity-8">Yes! <a href="mailto:hello@simpleid.xyz">Contact us</a> and we'll help make that happen.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-primary-3 text-white links-white pb-4 footer-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-auto mr-xl-5 col-lg-3 mb-4 mb-lg-0">
+        <h5>Company</h5>
+        <ul class="nav flex-row flex-lg-column">
+          <li class="nav-item mr-3 mr-lg-0">
+            <a href="mailto:hello@simpleid.xyz" class="nav-link px-0 py-2">Contact</a>
+          </li>
+          <li class="nav-item mr-3 mr-lg-0">
+            <a href="https://twitter.com/stealthyinc"  target="_blank" class="nav-link px-0 py-2">Twitter</a>
+          </li>
+          <li class="nav-item mr-3 mr-lg-0">
+            <a href="https://github.com/simplesecure"  target="_blank" class="nav-link px-0 py-2">Github</a>
+          </li>
+          <li class="nav-item mr-3 mr-lg-0">
+            <a href="https://medium.com/simpleid-dev-tools"  target="_blank" class="nav-link px-0 py-2">Blog</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xl-auto mr-xl-5 col-lg-3 mb-4 mb-lg-0">
+        <h5>Legal & Other</h5>
+        <ul class="nav flex-row flex-lg-column">
+          <li class="nav-item mr-3 mr-lg-0">
+            <a href="/faq.html">FAQ</a>
+          </li>
+          <li class="nav-item mr-3 mr-lg-0">
+            <a href="https://www.termsfeed.com/terms-conditions/b13d80e035b2e120f019f9d657067884" target="_blank" class="nav-link px-0 py-2">Terms of Use</a>
+          </li>
+          <li class="nav-item mr-3 mr-lg-0">
+            <a href="https://www.termsfeed.com/privacy-policy/3ef420f2df55bacbf56ef22223e07aa2" target="_blank" class="nav-link px-0 py-2">Privacy Policy</a>
+          </li>
+          <!-- <li class="nav-item mr-3 mr-md-0">
+            <a href="help-center-home.html" class="nav-link fade-page px-0 py-2">FAQ</a>
+          </li> -->
+        </ul>
+      </div>
+
+      <div class="col-lg  order-lg-3 order-xl-4">
+        <h5>Slack & Newsletter</h5>
+        <div id="mc_embed_signup" class="card card-body bg-white">
+          <p>Stay up to date on all SimpleID projects and development</p>
+          <form action="https://xyz.us3.list-manage.com/subscribe/post?u=62b7e84964f108856f2967bde&amp;id=ef17d43d57" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+              <div class="d-flex flex-column flex-sm-row form-group mc-field-group">
+                <!-- <label for="mce-EMAIL">Email Address </label> -->
+                <input id="mce-EMAIL" name="EMAIL" class="required email form-control mr-sm-2 mb-2 mb-sm-0 w-auto flex-grow-1" name="email" placeholder="Email Address" type="email">
+              </div>
+              <div class="d-flex flex-column flex-sm-row form-group mc-field-group">
+                <!-- <label for="mce-FNAME">First Name </label> -->
+                <input id="mce-FNAME" class="form-control mr-sm-2 mb-2 mb-sm-0 w-auto flex-grow-1" name="FNAME" placeholder="First Name" type="text" required>
+              </div>
+              <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+              </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_62b7e84964f108856f2967bde_ef17d43d57" tabindex="-1" value=""></div>
+              <!-- <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div> -->
+              <button id="mc-embedded-subscribe" type="submit" value="Subscribe" name="subscribe" class="btn btn-primary btn-loading" data-loading-text="Sending">
+                <svg class="icon bg-white" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>Icon For Loading</title>
+                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g>
+                      <polygon points="0 0 24 0 24 24 0 24" opacity="0"></polygon>
+                    </g>
+                    <path d="M12,4 L12,6 C8.6862915,6 6,8.6862915 6,12 C6,15.3137085 8.6862915,18 12,18 C15.3137085,18 18,15.3137085 18,12 C18,10.9603196 17.7360885,9.96126435 17.2402578,9.07513926 L18.9856052,8.09853149 C19.6473536,9.28117708 20,10.6161442 20,12 C20,16.418278 16.418278,20 12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 Z"
+                    fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "></path>
+                  </g>
+                </svg>
+                <span>Submit</span>
+              </button>
+            </div>
+          </form>
+        </div>
+        <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+        <!--End mc_embed_signup-->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <hr>
+      </div>
+    </div>
+    <div class="row flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
+      <div class="col-auto">
+        <div class="d-flex flex-column flex-sm-row align-items-center text-small">
+          <div class="text-muted">&copy; 2019 Stealthy Inc</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-auto mt-3 mt-lg-0">
+        <ul class="list-unstyled d-flex mb-0">
+          <li class="mx-3">
+            <a href="https://twitter.com/stealthyinc" target="_blank" class="hover-fade-out">
+              <img src="assets/img/icons/social/twitter.svg" alt="Twitter" class="icon icon-xs bg-white" data-inject-svg>
+            </a>
+          </li>
+          <li class="mx-3">
+            <a href="https://github.com/simplesecure" target="_blank" class="hover-fade-out">
+              <img src="assets/img/icons/social/github.svg" alt="Github" class="icon icon-xs bg-white" data-inject-svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<a href="#top" class="btn btn-primary rounded-circle btn-back-to-top" data-smooth-scroll data-aos="fade-up" data-aos-offset="2000" data-aos-mirror="true" data-aos-once="false">
+  <img src="assets/img/icons/interface/icon-arrow-up.svg" alt="Icon" class="icon bg-white" data-inject-svg>
+</a>
+<!-- Required vendor scripts (Do not remove) -->
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/popper.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+
+<!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
+
+<!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
+<script type="text/javascript" src="assets/js/aos.js"></script>
+<!-- Clipboard (copies content from browser into OS clipboard) -->
+<script type="text/javascript" src="assets/js/clipboard.min.js"></script>
+<!-- Fancybox (handles image and video lightbox and galleries) -->
+<script type="text/javascript" src="assets/js/jquery.fancybox.min.js"></script>
+<!-- Flatpickr (calendar/date/time picker UI) -->
+<script type="text/javascript" src="assets/js/flatpickr.min.js"></script>
+<!-- Flickity (handles touch enabled carousels and sliders) -->
+<script type="text/javascript" src="assets/js/flickity.pkgd.min.js"></script>
+<!-- Ion rangeSlider (flexible and pretty range slider elements) -->
+<script type="text/javascript" src="assets/js/ion.rangeSlider.min.js"></script>
+<!-- Isotope (masonry layouts and filtering) -->
+<script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+<!-- jarallax (parallax effect and video backgrounds) -->
+<script type="text/javascript" src="assets/js/jarallax.min.js"></script>
+<script type="text/javascript" src="assets/js/jarallax-video.min.js"></script>
+<script type="text/javascript" src="assets/js/jarallax-element.min.js"></script>
+<!-- jQuery Countdown (displays countdown text to a specified date) -->
+<script type="text/javascript" src="assets/js/jquery.countdown.min.js"></script>
+<!-- jQuery smartWizard facilitates steppable wizard content -->
+<script type="text/javascript" src="assets/js/jquery.smartWizard.min.js"></script>
+<!-- Plyr (unified player for Video, Audio, Vimeo and Youtube) -->
+<script type="text/javascript" src="assets/js/plyr.polyfilled.min.js"></script>
+<!-- Prism (displays formatted code boxes) -->
+<script type="text/javascript" src="assets/js/prism.js"></script>
+<!-- ScrollMonitor (manages events for elements scrolling in and out of view) -->
+<script type="text/javascript" src="assets/js/scrollMonitor.js"></script>
+<!-- Smooth scroll (animation to links in-page)-->
+<script type="text/javascript" src="assets/js/smooth-scroll.polyfills.min.js"></script>
+<!-- SVGInjector (replaces img tags with SVG code to allow easy inclusion of SVGs with the benefit of inheriting colors and styles)-->
+<script type="text/javascript" src="assets/js/svg-injector.umd.production.js"></script>
+<!-- TwitterFetcher (displays a feed of tweets from a specified account)-->
+<script type="text/javascript" src="assets/js/twitterFetcher_min.js"></script>
+<!-- Typed text (animated typing effect)-->
+<script type="text/javascript" src="assets/js/typed.min.js"></script>
+<!-- Required theme scripts (Do not remove) -->
+<script type="text/javascript" src="assets/js/theme.js"></script>
+<!-- Removes page load animation when window is finished loading -->
+<script type="text/javascript">
+  window.addEventListener("load",function(){document.querySelector('body').classList.add('loaded');});
+</script>
+
+</body>
+
+</html>

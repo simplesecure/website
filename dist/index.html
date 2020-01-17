@@ -219,6 +219,11 @@
             <img class="brand" alt="SimpleID" src="assets/img/logos/brand/black_logo_no_background.svg">
           </a>
           <div class="d-flex align-items-center order-lg-3">
+            <a onclick="logButton('Growth Series')" href="https://www.simpleid.xyz/web3growth" class="btn btn-success ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3">Growth Handbook</a>
+            <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+              <img alt="Navbar Toggler Open Icon" class="navbar-toggler-open icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-menu.svg">
+              <img alt="Navbar Toggler Close Icon" class="navbar-toggler-close icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-x.svg">
+            </button>
             <a onclick="logButton('Header Start For Free')" href="#start" class="btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3">Start For Free</a>
             <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target=".navbar-collapse" data-toggle="collapse" type="button">
               <img alt="Navbar Toggler Open Icon" class="navbar-toggler-open icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-menu.svg">
@@ -232,9 +237,6 @@
               </li>
               <li class="nav-item">
                 <a onclick="logButton('Header Docs')" aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="https://docs.simpleid.xyz" target="_blank" rel="no-referrer no-opener" role="button">Documentation</a>
-              </li>
-              <li class="nav-item">
-                <a onclick="logButton('Header Testimonials')" aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="#testimonials" role="button">Testimonials</a>
               </li>
               <li class="nav-item">
                 <a onclick="logButton('Header Blog')" aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="https://blog.simpleid.xyz" target="_blank" rel="no-referrer no-opener" role="button">Blog</a>
@@ -279,19 +281,31 @@
           <div class="col-auto">
             <ul class="list-unstyled d-flex flex-wrap justify-content-center mb-0">
               <li class="my-3 mx-3 mx-lg-4">
-                <img class="logo-bar" src="assets/img/logos/brand/LENS_Logo.png" alt="Lens">
-              </li>
-              <li class="my-3 mx-3 mx-lg-4">
                 <img src="assets/img/partners/ThreeBoxLogoBlack.svg" alt="3Box" class="opacity-50">
               </li>
-              <li class="my-3 mx-3 mx-lg-4">
-                <img src="assets/img/partners/moonpay.svg" alt="Moonpay logo" class="opacity-50" data-inject-svg>
+              <!-- <li class="my-3 mx-3 mx-lg-4">
+                <img class="logo-bar" style="margin-top: -0.5rem;" src="assets/img/partners/gitcoin.png" alt="Gitcoin logo">
               </li>
+              <li class="my-3 mx-3 mx-lg-4">
+                <img class="logo-bar" src="assets/img/partners/instadapp.png" alt="InstaDapp logo">
+              </li>
+              <li class="my-3 mx-3 mx-lg-4">
+                <img class="logo-bar" src="assets/img/partners/livepeer.png" alt="Livepeer logo">
+              </li> -->
               <li class="my-3 mx-3 mx-lg-4">
                 <img class="logo-bar" src="assets/img/partners/matic.png" alt="Matic network logo">
               </li>
+              <!-- <li class="my-3 mx-3 mx-lg-4">
+                <img class="logo-bar" src="assets/img/partners/opensea.png" alt="Opensea logo">
+              </li> -->
               <li class="my-3 mx-3 mx-lg-4">
-                <img class="logo-bar" src="assets/img/partners/Textile.png" alt="Textile logo" class="opacity-50">
+                <img class="logo-bar" src="assets/img/partners/radar.svg" alt="Radar logo">
+              </li>
+              <li class="my-3 mx-3 mx-lg-4">
+                <img class="logo-bar" style="height: 30px; margin-top: 0.7rem;" src="assets/img/partners/terminal.svg" alt="Terminal logo">
+              </li>
+              <li class="my-3 mx-3 mx-lg-4">
+                <img class="logo-bar" style="max-height: 20px; top: 4px" src="assets/img/partners/zerion.svg" alt="Zerion logo">
               </li>
             </ul>
           </div>
@@ -334,99 +348,20 @@
         <p class="text-muted text-small">According to a survey of blockchain app developers by Fluence Labs</p>
       </div>
 
-      <div class="divider divider-bottom bg-light"></div>
+      <!-- <div class="divider divider-bottom bg-light"></div> -->
     </section>
 
     <section id="solutions" class="bg-light pb-0 pt-5">
         <div class="container">
           <div class="row section-title justify-content-center text-center">
-            <div class="col-md-9 col-lg-8 col-xl-7">
-              <h3 class="display-4">A more <mark>engaging</mark> way forward</h3>
+            <div class="col-md-10 col-lg-9 col-xl-8">
+              <h3 class="display-4">A more <mark>engaging</mark> future</h3>
               <div class="lead">SimpleID is modular to allow you to build the best solution for your customers.</div>
             </div>
           </div>
-          <div class="row text-center justify-content-center">
-            <div class="col-sm-12">
-              <div>
-                <div>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <h3 class="h1" style="text-align: left;">Solutions</h3>
-                      <ul class="solutions-list">
-                        <li onclick="handleSolution('passwordless')"><span id="feature-disc" class='pulse-button'></span>No Passwords, Web3 Ready <span class="badge badge-primary">Available</span></li>
-                        <ul style="display: none;" class="solutions-sub-list" id="passwordless-extra">
-                          <li>
-                            <span class="sol-extra-card card">SimpleID is the only passwordless authentication solution for blockchain applications that is also compatible with the world's most popular Ethereum library, Web3.js.</span>
-                          </li>
-                        </ul>
-                        <li onclick="handleSolution('social')">Social Sign In for the 99% <span class="badge badge-primary">Available</span></li>
-                        <ul style="display: none;" class="solutions-sub-list" id="social-extra">
-                          <li>
-                            <span class="sol-extra-card card">You can leverage SimpleID to provide a social sign on experience your customers are used to. Use Google, Twitter, Facebook, and others to enable blockchain sign on.</span>
-                          </li>
-                        </ul>
-                        <li onclick="handleSolution('notifications')">Simple, Powerful Notifications <span class="badge badge-secondary">Soon</span></li>
-                        <ul style="display: none;" class="solutions-sub-list" id="notifications-extra">
-                          <li>
-                            <span class="sol-extra-card card">Instead of sending a blog post or a social media post into the void and hoping your customers see it, leverage SimpleID's notification system to make sure get the message out.</span>
-                          </li>
-                        </ul>
-                        <li onclick="handleSolution('insights')">Actionable Insights <span class="badge badge-secondary">Soon</span></li>
-                        <ul style="display: none;" class="solutions-sub-list" id="insights-extra">
-                          <li>
-                            <span class="sol-extra-card card">For the first time, you can use smart contract and on-chain interactions to help you better understand your customers. This allows you to segment and communicate expertly.</span>
-                          </li>
-                        </ul>
-                        <li onclick="handleSolution('re-engagement')">Re-Engage With Confidence <span class="badge badge-secondary">Soon</span></li>
-                        <ul style="display: none;" class="solutions-sub-list" id="re-engagement-extra">
-                          <li>
-                            <span class="sol-extra-card card">With SimpleID you can re-engage churning customers. You can attract them back to your app, entice them to share with their friends, and get them hooked again.</span>
-                          </li>
-                        </ul>
-                      </ul>
-                    </div>
-                    <div class="col-md-8" id="passwordless">
-                      <div class="p-3 p-md-5">
-                        <img class="three-quarter-width" src="assets/img/codeSnip.png" alt="Example code" />
-                      </div>
-                    </div>
-
-                    <div class="col-md-8" style="display: none;" id="social">
-                      <div class="p-3 p-md-5">
-                        <img class="half-width" src="assets/img/socialauth.png" alt="Social auth" />
-                      </div>
-                    </div>
-
-                    <div class="col-md-8" style="display: none;" id="notifications">
-                      <div class="p-3 p-md-5">
-                        <img class="three-quarter-width" src="assets/img/notification.png" alt="Example notification" />
-                      </div>
-                    </div>
-
-                    <div class="col-md-8" style="display: none;" id="insights">
-                      <div class="p-3 p-md-5">
-                        <img class="three-quarter-width" src="assets/img/analytics.jpg" alt="Analytics" />
-                      </div>
-                    </div>
-
-                    <div class="col-md-8" style="display: none;" id="re-engagement">
-                      <div class="p-3 p-md-5">
-                        <img class="three-quarter-width" src="assets/img/engage_blue.png" alt="Example code" />
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                <!-- <hr />
-                <br />
-                <h2 id="see-it" class="h2">Simple onboarding starts with simple code</h2>
-                <p>The code below is all you need. Click run to execute and see the execution output.</p>
-                <div class="repl-frame">
-                  <iframe class="repl-iframe" src="https://repl.it/@pbj/SimpleIDDemo?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-                </div>                -->
-              </div>
-            </div>
-
+          <div class="row text-center justify-content-center" style="position: relative; padding-bottom: 62.5%; height: 0;">
+            <iframe src="https://www.loom.com/embed/3a3c2626ddce462c8f22aa71c409fe2f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+            </iframe>
           </div>
         </div>
         <div class="divider divider-bottom bg-white mt-5"></div>
@@ -522,36 +457,7 @@
         </div>
       </div>
     </section>-->
-    <section id="testimonials" class="bg-primary-3 text-white o-hidden pb-0">
-      <div class="container">
-        <div class="row section-title justify-content-center text-center">
-          <div class="col-md-9 col-lg-8 col-xl-7">
-            <h3 class="display-4">Customers Love Us</h3>
-          </div>
-        </div>
-      </div>
-      <div class="highlight-selected" data-flickity='{ "imagesLoaded": true, "wrapAround":true, "pageDots":false, "adaptiveHeight":true, "autoPlay":3000 }'>
-        <div class="carousel-cell col-xl-7 col-md-8">
-          <div class="row align-items-center justify-content-start justify-content-sm-center mx-3 mx-xl-4">
-            <div class="col-sm-auto mb-4 mb-sm-0">
-              <img class="img-fluid avatar avatar-xl" src="assets/img/avatars/mark.jpg" alt="Mark Chavez avatar image">
-            </div>
-            <div class="col pl-lg-4">
-              <h4 class="h2">&ldquo;We had been losing too many consumers to the complex ID creation process.&rdquo;</h4>
-              <p>
-                SimpleID removes that barrier and the consumer immediately can connect with the value we have built.
-              </p>
-              <p class="text-small text-muted">Mark Chavez, <a href="https://mylens.io" target="_blank" rel="noreferrer noopener">Lens</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="position-absolute w-50 h-100 top right" data-jarallax-element="100 48">
-        <div class="blob blob-2 w-100 h-100 top right bg-gradient opacity-50"></div>
-      </div>
-      <div class="divider divider-bottom bg-white"></div>
-    </section>
-    <section>
+    <section id="testimonials" class="bg-white text-black o-hidden pb-0">
       <div class="container">
         <div class="row section-title justify-content-center text-center">
           <div id="start" class="col-md-9 col-lg-8 col-xl-7">
@@ -572,6 +478,10 @@
           </div>
         </div>
       </div>
+      <!-- <div class="position-absolute w-50 h-100 top right" data-jarallax-element="100 48">
+        <div class="blob blob-2 w-100 h-100 top right bg-gradient opacity-50"></div>
+      </div> -->
+      <div class="divider divider-bottom bg-primary-3"></div>
     </section>
 
     <footer class="bg-primary-3 text-white links-white pb-4 footer-1">
@@ -584,14 +494,17 @@
                 <a onclick="logLink('Footer Contact')" href="mailto:hello@simpleid.xyz" class="nav-link px-0 py-2">Contact</a>
               </li>
               <li class="nav-item mr-3 mr-lg-0">
+                <a href="https://discordapp.com/invite/Pz7tcSK" target="_blank" class="nav-link px-0 py-2">Discord</a>
+              </li>
+              <li class="nav-item mr-3 mr-lg-0">
                 <a onclick="logLink('Footer Twitter')" href="https://twitter.com/stealthyinc"  target="_blank" class="nav-link px-0 py-2">Twitter</a>
               </li>
               <li class="nav-item mr-3 mr-lg-0">
                 <a onclick="logLink('Footer GitHub')" href="https://github.com/simplesecure"  target="_blank" class="nav-link px-0 py-2">GitHub</a>
               </li>
-              <li class="nav-item mr-3 mr-lg-0">
+              <!-- <li class="nav-item mr-3 mr-lg-0">
                 <a onclick="logLink('Footer Blog')" href="https://medium.com/simpleid-dev-tools"  target="_blank" class="nav-link px-0 py-2">Blog</a>
-              </li>
+              </li> -->
             </ul>
           </div>
           <div class="col-xl-auto mr-xl-5 col-lg-3 mb-4 mb-lg-0">
@@ -610,7 +523,7 @@
           </div>
 
           <div class="col-lg  order-lg-3 order-xl-4">
-            <h5>Slack & Newsletter</h5>
+            <h5>Discord & Newsletter</h5>
             <div id="mc_embed_signup" class="card card-body bg-primary-3">
               <p class="text-white">Stay up to date on all SimpleID projects and development</p>
               <form action="https://xyz.us3.list-manage.com/subscribe/post?u=62b7e84964f108856f2967bde&amp;id=ef17d43d57" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -657,7 +570,7 @@
         <div class="row flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
           <div class="col-auto">
             <div class="d-flex flex-column flex-sm-row align-items-center text-small">
-              <div class="text-muted">&copy; 2019 Stealthy Inc</a>
+              <div class="text-muted">&copy; 2020 Stealthy Inc</a>
               </div>
             </div>
           </div>

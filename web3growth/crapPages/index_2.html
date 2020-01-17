@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="description" content="SimpleID makes it easy for developers to add secure, encrypted authentication and storage to their apps.">
+    <meta name="keywords" content="Authentication, Storage, Secure, Oauth, Simple, Encryption, Blockstack, Ethereum, Blockchain, Decentralization">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.simpleid.xyz">
+    <meta name="twitter:site" content="@stealthyinc">
+    <meta name="twitter:title" content="SimpleID: Decentralization Simplified">
+    <meta name="twitter:description" content="No matter the platform, SimpleID speeds up your application development without compromising on privacy and security.">
+    <meta name="twitter:image" content="https://www.simpleid.xyz/assets/img/newHomePage.png">
+    <title>SimpleID - Decentralization Simplified</title>
+    <!-- Begin loading animation -->
+    <link href="assets/css/loaders/loader-pulse.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- End loading animation -->
+    <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,600,700&display=swap" rel="stylesheet">
+
+    <!--Dev/Prod setup-->
+    <script type="text/javascript">
+      const hostName = window.location.hostname
+      const isDevelopment = (hostName === '' || hostName === 'localhost' || hostName === '127.0.0.1');
+
+      const amplitudeKey = (isDevelopment) ? 'f44acee7b5df07742070770017e1cc64' :
+                                             'cacaa44d1730abe2439279a160e5e8c1';
+    </script>
+
+    <!--Amplitude - inline for perf. -->
+  	<script type="text/javascript">
+  	  (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
+  	  ;r.type="text/javascript"
+  	  ;r.integrity="sha384-d/yhnowERvm+7eCU79T/bYjOiMmq4F11ElWYLmt0ktvYEVgqLDazh4+gW9CKMpYW"
+  	  ;r.crossOrigin="anonymous";r.async=true
+  	  ;r.src="https://cdn.amplitude.com/libs/amplitude-5.2.2-min.gz.js"
+  	  ;r.onload=function(){if(!e.amplitude.runQueuedFunctions){
+  	  console.log("[Amplitude] Error: could not load SDK")}}
+  	  ;var i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)
+  	  ;function s(e,t){e.prototype[t]=function(){
+  	  this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}
+  	  var o=function(){this._q=[];return this}
+  	  ;var a=["add","append","clearAll","prepend","set","setOnce","unset"]
+  	  ;for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[]
+  	  ;return this}
+  	  ;var l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"]
+  	  ;for(var p=0;p<l.length;p++){s(c,l[p])}n.Revenue=c
+  	  ;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","groupIdentify","onInit","logEventWithTimestamp","logEventWithGroups","setSessionId","resetSessionId"]
+  	  ;function v(e){function t(t){e[t]=function(){
+  	  e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}
+  	  for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){
+  	  e=(!e||e.length===0?"$default_instance":e).toLowerCase()
+  	  ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
+  	  ;e.amplitude=n})(window,document);
+  		//
+
+  	  amplitude.getInstance().init(
+  			amplitudeKey, null, { includeReferrer: true, includeUtm: true } );
+  		//
+  		function dbgLog(aString) {
+  	    if (isDevelopment) { console.log(aString); }
+  		}
+  	</script>
+
+  	<!-- Amplitude helper functionality -->
+  	<script>
+  		const simpleIdSystemVersion = "1.0.1"
+  		amplitude.getInstance().setVersionName(simpleIdSystemVersion)
+  		//
+  		let lastPageVisited = getPageName()
+  		//
+  		// Returns the page name (i.e. reference / anchor on the site). For example,
+  		// if the URL is .../index.html#cheese, this returns #cheese.
+  		//
+  		function getPageName() {
+  			const pageName = window.location.hash
+  			return (!pageName) ? '#home' : pageName
+  		}
+      //
+      let sourceEventProperties = {}
+      try {
+        const urlString = window.location.href
+        const url = new URL(urlString)
+        const tCode = url.searchParams.get('t')
+        const sCode = url.searchParams.get('s')
+
+        if (sCode) {
+          sourceEventProperties['s_code'] = sCode
+        }
+        if (tCode) {
+          sourceEventProperties['t_code'] = tCode
+
+          // Set the user property tCode for backward compatibility with
+          // earlier versions of our Analytics.
+          const identity = new amplitude.Identify().set('tCode', tCode)
+          amplitude.getInstance().identify(identity)
+        }
+      } catch (suppressedError) {
+        console.log(`tCode / sCode - suppressedError: ${suppressedError}`)
+      }
+      //
+      // Wrapper to differentiate events from our different sites:
+      //   MKT - Marketing
+      //   DAS - Developer Dashboard
+      //   HLO - Hello App
+      //
+      const eventPrefix = 'MKT'
+      //
+      function logEvent(anEventName, theEventProperties={}) {
+        const eventName = `${eventPrefix} ${anEventName}`
+
+        // All events have source properties attached now, so merge those in.
+        const mergedEventProperties =
+          Object.assign(theEventProperties, sourceEventProperties)
+
+        let sMergedEventProperties = ''
+        try {
+          sMergedEventProperties = JSON.stringify(mergedEventProperties)
+        } catch (suppressedError) {}
+        dbgLog(`DBG(logEvent): ${eventName}, ${sMergedEventProperties}`)
+
+        amplitude.getInstance().logEvent(eventName, mergedEventProperties)
+      }
+  		//
+  		// Listen for & identify navigation changes
+  		//
+  		document.onmouseover = function() {
+        window.innerDocClick = true		// User's mouse is inside the page.
+      }
+      //
+      document.onmouseleave = function() {
+        window.innerDocClick = false	// User's mouse has left the page.
+      }
+      //
+      window.addEventListener('hashchange', function(event) {
+        const page = getPageName()
+  			const eventProperties = {
+  				'previousPage': lastPageVisited,
+  				'trigger': (window.innerDocClick ? 'site content' : 'browser button')
+  			}
+        var eventName = `${page} Visited`
+  			logNavigate(page, eventProperties)
+
+  			lastPageVisited = page
+      }, false);
+  		//
+  		// Log the unloading of our page
+  		window.onunload = function() {
+  			const eventProperties = {
+  				'page': getPageName()
+  			}
+  			logEvent('Site exited', eventProperties)
+  		}
+  		//
+  		function logNavigate(page='', eventProperties={}) {
+  			if (page) {
+  				logEvent(`${page} visited.`, eventProperties)
+  			}
+  		}
+  		//
+  		function logButton(buttonName) {
+  			logClick(`${buttonName} button pressed`)
+  		}
+  		//
+  		function logLink(linkName) {
+  			logClick(`${linkName} link clicked`)
+  		}
+  		//
+  		function logClick(clickEventName, eventProperties={}) {
+  			if (clickEventName) {
+  				eventProperties['page'] = getPageName()
+  				logEvent(clickEventName, eventProperties)
+  			}
+  		}
+      //
+      function logSiteLoad() {
+        logEvent('Site Loaded')
+        logNavigate(getPageName())
+      }
+  		//
+  		logSiteLoad()
+  	</script>
+  </head>
+
+  <body>
+    <div class="loader">
+      <div class="loading-animation"></div>
+    </div>
+
+    <div class="navbar-container">
+      <nav class="navbar navbar-expand-lg navbar-light" data-overlay data-sticky="top">
+        <div class="container">
+          <a onclick="logButton('Header Logo')" class="navbar-brand navbar-brand-dynamic-color" href="index.html">
+            <img alt="SimpleID" data-inject-svg src="assets/img/logos/simpleid.svg">
+          </a>
+          <div class="d-flex align-items-center order-lg-3">
+            <a onclick="logButton('Header Start For Free')" href="#app" class="btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3">Start For Free</a>
+            <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+              <img alt="Navbar Toggler Open Icon" class="navbar-toggler-open icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-menu.svg">
+              <img alt="Navbar Toggler Close Icon" class="navbar-toggler-close icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-x.svg">
+            </button>
+          </div>
+          <div class="collapse navbar-collapse order-3 order-lg-2 justify-content-lg-end" id="navigation-menu">
+            <ul class="navbar-nav my-3 my-lg-0">
+              <li class="nav-item">
+                <a onclick="logButton('Header Features')" aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="#features" role="button">Features</a>
+              </li>
+              <li class="nav-item">
+                <a onclick="logButton('Header Examples')" aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="#examples" role="button">Examples</a>
+              </li>
+              <li class="nav-item">
+                <a onclick="logButton('Header Pricing')" aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="#pricing" role="button">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a onclick="logButton('Header Blog')" aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="https://medium.com/simpleid-dev-tools" target="_blank" role="button">Blog</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- the class ph-button has the inline styling below defined, but fails to occur at the correct time resulting in the ph button being in the wrong spot, hence the inline styling.-->
+    <div style="position:fixed; bottom:30px; left:15px; z-index: 999;">
+      <a onclick="logButton('Product Hunt')" href="https://www.producthunt.com/posts/simpleid?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-simpleid" target="_blank">
+        <img
+          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=165087&theme=dark"
+          alt="SimpleID - Add decentralized auth and storage to your app in 10 minutes | Product Hunt Embed"
+          style="width: 250px; height: 54px;"
+          width="250px" height="54px" />
+      </a>
+    </div>
+
+    <div data-overlay class="o-hidden">
+      <section class="pb-0">
+        <div class="container">
+          <div class="row justify-content-center text-center min-vh-40 d-flex flex-column align-items-center">
+            <div class="col-md-10 col-lg-9 col-xl-8" data-aos="fade-up">
+              <h1 class="display-3">Solving blockchain user acquisition and retention</h1>
+              <p class="lead px-xl-5">Add Web 3.0 technology to your application in under 10 minutes. Authentication, storage, smart contracts, and more.</p>
+              <div class="d-flex flex-column flex-sm-row mt-4 mt-md-5 justify-content-center" data-aos="fade-up" data-aos-delay="300">
+                <a onclick="logButton('Get Started Free')" href="#app" class="btn btn-primary btn-lg mx-sm-2 my-1 my-sm-0" data-smooth-scroll>Get Started Free</a>
+                <a onclick="logButton('Read The Docs')" href="https://docs.simpleid.xyz" target="_blank" class="btn btn-outline-primary btn-lg mx-sm-2 my-1 my-sm-0">Read The Docs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- not working due to css transation issue (not timing as we confirmed this by injecting the code) -->
+        <!--div class="position-absolute bottom left w-50 h-50 d-none d-md-block" data-jarallax-element="-24 48">
+          <div class="blob bg-gradient-1 w-50 h-100 bottom left"></div>
+        </div>
+        <div class="position-absolute top right w-50 h-50 d-none d-md-block" data-jarallax-element="48">
+          <div class="blob blob-2 bg-gradient-1 w-50 h-50 top right"></div>
+        </div-->
+        <div class="divider divider-bottom bg-primary-3"></div>
+      </section>
+    </div>
+
+    <section id="features" class="bg-primary-3 text-white">
+      <div class="container">
+        <div class="text-white">
+          <div class="row justify-content-center text-center">
+            <div class="col-md-9 col-lg-8 col-xl-7">
+              <h3 class="display-4">Features</h3>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-6 mb-3 mb-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card card-body bg-white align-items-start flex-sm-row h-100">
+              <img src="assets/img/icons/theme/general/settings-1.svg" alt="Icon for Settings-1" class="icon bg-primary mb-4 mb-sm-0" data-inject-svg>
+              <div class="ml-sm-3 ml-md-4">
+                <h5>Cross-Platform Support</h5>
+                <p>
+                  No matter your target device or programming language, SimpleID has you covered with documentation and examples.
+                </p>
+                <a onclick="logButton('Read The Docs')" href="https://docs.simpleid.xyz" target="_blank" class="btn btn-sm btn-primary">Read The Docs</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-3 mb-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card card-body bg-white align-items-start flex-sm-row h-100">
+              <img src="assets/img/icons/theme/devices/display-1.svg" alt="Icon for Display-1" class="icon bg-primary mb-4 mb-sm-0" data-inject-svg>
+              <div class="ml-sm-3 ml-md-4">
+                <h5>Authentication and Storage</h5>
+                <p>
+                  Supercharge your application in minutes by using SimpleID to add authentication and decentralized storage.
+                </p>
+                <a onclick="logButton('Try The Demo')" href="https://www.simpleid.xyz/demo" target="_blank" class="btn btn-sm btn-primary">Try The Demo</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-3 mb-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card card-body bg-white align-items-start flex-sm-row h-100">
+              <img src="assets/img/icons/theme/design/layers.svg" alt="Icon for Layers" class="icon bg-primary mb-4 mb-sm-0" data-inject-svg>
+              <div class="ml-sm-3 ml-md-4">
+                <h5>Scales With You</h5>
+                <p>
+                  Start for free and when your application gains traction, scale up to support it. We offer simple, transparent pricing.
+                </p>
+                <a onclick="logButton('See Pricing')" href="#pricing" class="btn btn-sm btn-primary">See Pricing</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-3 mb-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="card card-body bg-white align-items-start flex-sm-row h-100">
+              <img src="assets/img/icons/theme/communication/chat-smile.svg" alt="Icon for Chat-Smile" class="icon bg-primary mb-4 mb-sm-0" data-inject-svg>
+              <div class="ml-sm-3 ml-md-4">
+                <h5>Friendly Developer Community</h5>
+                <p>
+                  We have a friendly community of developers building awesome projects. Come join our Slack and become part of the team.
+                </p>
+                <a onclick="logButton('Join Our Slack')" href="https://join.slack.com/t/simpleidxyz/shared_invite/enQtNzUzOTExMzI2OTQ5LTZhM2I2NzhjMTllYjMzZTg5YmYzOTNiNzBiY2E3MDQyNjU3NTU3Y2VkOGY2OWM2NzJhOWJmOGEyNDczM2VkZjc" class="btn btn-sm btn-primary" target="_blank">Join Our Slack</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="examples">
+      <div class="container">
+        <div class="row section-title justify-content-center text-center mb-3">
+          <div class="col-md-9 col-lg-8 col-xl-7">
+            <h3 class="display-4">Get Started in Minutes</h3>
+            <div class="lead">We believe developers should focus on their users, so we've made integrating SimpleID easy.  Here's an example that creates and signs in a new user.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="py-2 p-lg-4 p-xl-5 rounded bg-secondary text-center">
+              <blockquote class="embedly-card" data-card-width="100%"><h4><a href="https://runkit.com/polluterofminds/simpleid-node-sdk">RunKit</a></h4><p>RunKit notebooks are interactive javascript playgrounds connected to a complete node environment right in your browser. Every npm module pre-installed.</p></blockquote>
+              <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+              <div class="d-inline-block lead">There's even more on <a onclick="logLink('GitHub')" href="https://github.com/simplesecure" class="hover-fade-out" target="_blank">GitHub <img src="assets/img/icons/social/github.svg" alt="Github" class="icon icon-sm bg-primary" data-inject-svg></a> to help you get started.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-primary-3 pb-0">
+
+        <div class="container">
+          <div class="text-white">
+            <div class="row section-title justify-content-center text-center">
+              <div class="col-md-9 col-lg-8 col-xl-7">
+                <h3 class="display-4">Developers love us</h3>
+                <div class="lead">Don't just take our word for it. Read these testimonials and know you're in good hands.</div>
+              </div>
+            </div>
+          </div>
+          <div class="row" data-isotope-collection data-ignore-hash="true">
+            <div class="col-sm-6 col-lg-4 mb-3 mb-md-4" data-isotope-item>
+              <div class="card card-body">
+                <p>&ldquo;The user experience enhancement by dropping in SimpleID
+                  <mark data-aos='highlight-text' data-aos-delay='200'>is incredible and can't be undersold.</mark>Graphite's users love it.&rdquo;</p>
+                <div class="d-flex">
+                  <img src="assets/img/avatars/envato.svg" alt="Themeforest">
+                  <div class="ml-3">
+                    <h6 class="mb-0">Justin</h6>
+                    <div><a onclick="logButton('Graphite')" href="https://graphitedocs.com" target="_blank">Graphite</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 mb-3 mb-md-4" data-isotope-item>
+              <div class="card card-body">
+                <p>&ldquo;User adoption was difficult because Web 3.0 technology requires users to log into apps in a way they aren't used to.
+                  <mark data-aos='highlight-text' data-aos-delay='200'>SimpleID solved that by providing simple account creation and login</mark> while still giving our users access to decentralized protocols.&rdquo;</p>
+                <div class="d-flex">
+                  <img src="assets/img/avatars/envato.svg" alt="Themeforest">
+                  <div class="ml-3">
+                    <h6 class="mb-0">Prabhaav</h6>
+                    <div><a onclick="logButton('Stealthy')" href="https://www.stealthy.im" target="_blank">Stealthy</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 mb-3 mb-md-4" data-isotope-item>
+              <div class="card card-body">
+                <p>&ldquo;This makes demos a lot cleaner to potential customers. The Blockstack flow threw a lot of people off.
+                  <mark data-aos='highlight-text' data-aos-delay='200'>I demoed the app today for a customer with the SimpleID integration and he was really stoked.</mark>&rdquo;</p>
+                <div class="d-flex">
+                  <img src="assets/img/avatars/envato.svg" alt="Themeforest">
+                  <div class="ml-3">
+                    <h6 class="mb-0">Cody</h6>
+                    <div><a onclick="logButton('Lens')" href="https://contact.mylens.io" target="_blank">Lens</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="divider divider-bottom"></div>
+    </section>
+
+    <section id="pricing">
+    <div data-overlay class="o-hidden">
+          <div class="container">
+            <div class="row text-center justify-content-center">
+              <div class="col">
+                <h1 class="display-3">Pricing that scales with you</h1>
+              </div>
+            </div>
+            <div class="row text-center justify-content-center">
+              <div class="col-md-9 col-lg-8 col-xl-7">
+                <p class="lead">Start free and let us grow along side you.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row justify-content-center">
+            <div class="col-sm-9 col-md-7 col-lg-4 mb-3 mb-md-4 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+              <div class="card card-body align-items-center shadow">
+
+                <div class="text-center mb-4">
+                  <h4>Silver</h4>
+                  <div class="d-flex align-items-center justify-content-center mb-1">
+                    <span class="h5 mb-0 mr-2">$</span>
+                    <span class="display-3 mb-0 text-dark">0</span>
+                  </div>
+                  <div>Per month</div>
+                </div>
+                <ul class="list-unstyled p-0">
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">Ethereum, Blockstack, Textile authentication</h6>
+                    </div>
+                  </li>
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">Blockstack and IPFS storage</h6>
+                    </div>
+                  </li>
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">5mb limit for pinned files</h6>
+                    </div>
+                  </li>
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">One project</h6>
+                    </div>
+                  </li>
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">500 users</h6>
+                    </div>
+                  </li>
+                  <li class="my-3 opacity-50">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-danger-alt">
+                        <img src="assets/img/icons/interface/icon-x.svg" alt=" icon=" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">Dedicated Support</h6>
+                    </div>
+                  </li>
+                  <li class="my-3 opacity-50">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-danger-alt">
+                        <img src="assets/img/icons/interface/icon-x.svg" alt=" icon=" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">Enterprise SLA</h6>
+                    </div>
+                  </li>
+                </ul>
+                <a onclick="logButton('Start With Silver')" href="#app" class="btn btn-lg btn-block btn-outline-primary">Start With Silver</a>
+              </div>
+            </div>
+            <div class="col-sm-9 col-md-7 col-lg-4 mb-3 mb-md-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+              <div class="card card-body align-items-center shadow">
+                <div class="text-center mb-4">
+                  <h4><span class="badge badge-success badge-pill">Best Value</span>&nbsp;&nbsp;Gold</h4>
+                  <div class="d-flex align-items-center justify-content-center mb-1">
+                    <span class="h5 mb-0 mr-2">$</span>
+                    <span class="display-3 mb-0 text-dark">9</span>
+                  </div>
+                  <div>Per month</div>
+                </div>
+                <ul class="list-unstyled p-0">
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">All free plan features</h6>
+                    </div>
+                  </li>
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">100mb limit for pinned files</h6>
+                    </div>
+                  </li>
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">Ethereum Smart Contracts</h6>
+                    </div>
+                  </li>
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">Multiple Projects</h6>
+                    </div>
+                  </li>
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">10,000 users</h6>
+                    </div>
+                  </li>
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">Email Support</h6>
+                    </div>
+                  </li>
+                  <li class="my-3 opacity-50">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-danger-alt">
+                        <img src="assets/img/icons/interface/icon-x.svg" alt=" icon=" class="m-2 icon icon-xs bg-danger" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">Enterprise SLA</h6>
+                    </div>
+                  </li>
+                </ul>
+                <a onclick="logButton('Get The Gold Plan')" href="#app" class="btn btn-lg btn-block btn-primary">Get The Gold Plan</a>
+              </div>
+            </div>
+            <div class="col-sm-9 col-md-7 col-lg-4 mb-3 mb-md-4 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
+              <div class="card card-body align-items-center shadow">
+
+                <div class="text-center mb-4">
+                  <h4>Platinum</h4>
+                  <div class="d-flex align-items-center justify-content-center mb-1">
+                    <span class="h5 mb-0 mr-2">$</span>
+                    <span class="display-3 mb-0 text-dark">XX</span>
+                  </div>
+                  <div>Per month</div>
+                </div>
+                <ul class="list-unstyled p-0">
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">All Gold plan features</h6>
+                    </div>
+                  </li>
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">No limit on pinned files</h6>
+                    </div>
+                  </li>
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">Unlimited users</h6>
+                    </div>
+                  </li>
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">Custom Analytics</h6>
+                    </div>
+                  </li>
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">White label communication</h6>
+                    </div>
+                  </li>
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">Dedicated Account Manager</h6>
+                    </div>
+                  </li>
+                  <li class="my-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-success-alt">
+                        <img src="assets/img/icons/interface/icon-check.svg" alt=" icon=" class="m-2 icon icon-xs bg-success" data-inject-svg>
+                      </div>
+                      <h6 class="mb-0 ml-3">Enterprise SLA</h6>
+                    </div>
+                  </li>
+                </ul>
+                <a onclick="logButton('Contact Us Platinum')" href="mailto:hello@simpleid.xyz?subject=I%20am%20interested%20in%20SimpleID%20Platinum" class="btn btn-lg btn-block btn-outline-primary">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="app" class="bg-primary-3 pb-0">
+      <div class="container">
+        <div class="text-white">
+          <div class="row justify-content-center text-center">
+            <div class="col-md-9 col-lg-8 col-xl-7">
+              <h3 class="display-4">Get started here now!</h3>
+              <div class="lead mb-4">Fill in this form to get an email confirming your account and access to Web 3.0 authentication, storage, smart contracts, and more for your App's users!</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div id="devPortalIFrame" class="d-flex flex-column pr-0 pl-0">
+          </div>
+        </div>
+      </div>
+      <div class="divider divider-bottom"></div>
+    </section>
+
+    <footer class="pb-4 footer-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-auto mr-xl-5 col-lg-3 mb-4 mb-lg-0">
+            <h5>Company</h5>
+            <ul class="nav flex-row flex-lg-column">
+              <li class="nav-item mr-3 mr-lg-0">
+                <a onclick="logLink('Footer Contact')" href="mailto:hello@simpleid.xyz" class="nav-link px-0 py-2">Contact</a>
+              </li>
+              <li class="nav-item mr-3 mr-lg-0">
+                <a onclick="logLink('Footer Twitter')" href="https://twitter.com/stealthyinc"  target="_blank" class="nav-link px-0 py-2">Twitter</a>
+              </li>
+              <li class="nav-item mr-3 mr-lg-0">
+                <a onclick="logLink('Footer GitHub')" href="https://github.com/simplesecure"  target="_blank" class="nav-link px-0 py-2">GitHub</a>
+              </li>
+              <li class="nav-item mr-3 mr-lg-0">
+                <a onclick="logLink('Footer Blog')" href="https://medium.com/simpleid-dev-tools"  target="_blank" class="nav-link px-0 py-2">Blog</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xl-auto mr-xl-5 col-lg-3 mb-4 mb-lg-0">
+            <h5>Legal & Other</h5>
+            <ul class="nav flex-row flex-lg-column">
+              <li class="nav-item mr-3 mr-lg-0">
+                <a onclick="logLink('Footer FAQ')" href="/faq.html" target= "_blank" class="nav-link px-0 py-2">FAQ</a>
+              </li>
+              <li class="nav-item mr-3 mr-lg-0">
+                <a onclick="logLink('Footer Terms')" href="https://www.termsfeed.com/terms-conditions/b13d80e035b2e120f019f9d657067884" target="_blank" class="nav-link px-0 py-2">Terms of Use</a>
+              </li>
+              <li class="nav-item mr-3 mr-lg-0">
+                <a onclick="logLink('Footer Privacy')" href="https://www.termsfeed.com/privacy-policy/3ef420f2df55bacbf56ef22223e07aa2" target="_blank" class="nav-link px-0 py-2">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg  order-lg-3 order-xl-4">
+            <h5>Slack & Newsletter</h5>
+            <div id="mc_embed_signup" class="card card-body bg-primary-3">
+              <p class="text-white">Stay up to date on all SimpleID projects and development</p>
+              <form action="https://xyz.us3.list-manage.com/subscribe/post?u=62b7e84964f108856f2967bde&amp;id=ef17d43d57" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                  <div class="d-flex flex-column flex-sm-row form-group mc-field-group">
+                  	<!-- <label for="mce-EMAIL">Email Address </label> -->
+                    <input id="mce-EMAIL" name="EMAIL" class="required email form-control mr-sm-2 mb-2 mb-sm-0 w-auto flex-grow-1" name="email" placeholder="Email Address" type="email">
+                  </div>
+                  <div class="d-flex flex-column flex-sm-row form-group mc-field-group">
+                  	<!-- <label for="mce-FNAME">First Name </label> -->
+                    <input id="mce-FNAME" class="form-control mr-sm-2 mb-2 mb-sm-0 w-auto flex-grow-1" name="FNAME" placeholder="First Name" type="text" required>
+                  </div>
+                	<div id="mce-responses" class="clear">
+                		<div class="response" id="mce-error-response" style="display:none"></div>
+                		<div class="response" id="mce-success-response" style="display:none"></div>
+                	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_62b7e84964f108856f2967bde_ef17d43d57" tabindex="-1" value=""></div>
+                  <!-- <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div> -->
+                  <button  onclick="logButton('Footer Slack Newsletter Submit')" id="mc-embedded-subscribe" type="submit" value="Subscribe" name="subscribe" class="btn btn-primary btn-loading" data-loading-text="Sending">
+                    <svg class="icon bg-white" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <title>Icon For Loading</title>
+                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g>
+                          <polygon points="0 0 24 0 24 24 0 24" opacity="0"></polygon>
+                        </g>
+                        <path d="M12,4 L12,6 C8.6862915,6 6,8.6862915 6,12 C6,15.3137085 8.6862915,18 12,18 C15.3137085,18 18,15.3137085 18,12 C18,10.9603196 17.7360885,9.96126435 17.2402578,9.07513926 L18.9856052,8.09853149 C19.6473536,9.28117708 20,10.6161442 20,12 C20,16.418278 16.418278,20 12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 Z"
+                        fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "></path>
+                      </g>
+                    </svg>
+                    <span>Submit</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+            <!--End mc_embed_signup-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <hr>
+          </div>
+        </div>
+        <div class="row flex-column flex-lg-row align-items-center justify-content-center justify-content-lg-between text-center text-lg-left">
+          <div class="col-auto">
+            <div class="d-flex flex-column flex-sm-row align-items-center text-small">
+              <div class="text-muted">&copy; 2019 Stealthy Inc</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto mt-3 mt-lg-0">
+            <ul class="list-unstyled d-flex mb-0">
+              <li class="mx-3">
+                <a href="https://twitter.com/stealthyinc" target="_blank" class="hover-fade-out">
+                  <img src="assets/img/icons/social/twitter.svg" alt="Twitter" class="icon icon-xs bg-white" data-inject-svg>
+                </a>
+              </li>
+              <li class="mx-3">
+                <a href="https://github.com/simplesecure" target="_blank" class="hover-fade-out">
+                  <img src="assets/img/icons/social/github.svg" alt="Github" class="icon icon-xs bg-white" data-inject-svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <a href="#top" class="btn btn-primary rounded-circle btn-back-to-top" data-smooth-scroll data-aos="fade-up" data-aos-offset="2000" data-aos-mirror="true" data-aos-once="false">
+      <img src="assets/img/icons/interface/icon-arrow-up.svg" alt="Icon" class="icon bg-white" data-inject-svg>
+    </a>
+    <!-- Required vendor scripts (Do not remove) -->
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+
+    <!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
+
+    <!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
+    <script type="text/javascript" src="assets/js/aos.js"></script>
+    <!-- Clipboard (copies content from browser into OS clipboard) -->
+    <script type="text/javascript" src="assets/js/clipboard.min.js"></script>
+    <!-- Fancybox (handles image and video lightbox and galleries) -->
+    <script type="text/javascript" src="assets/js/jquery.fancybox.min.js"></script>
+    <!-- Flatpickr (calendar/date/time picker UI) -->
+    <script type="text/javascript" src="assets/js/flatpickr.min.js"></script>
+    <!-- Flickity (handles touch enabled carousels and sliders) -->
+    <script type="text/javascript" src="assets/js/flickity.pkgd.min.js"></script>
+    <!-- Ion rangeSlider (flexible and pretty range slider elements) -->
+    <script type="text/javascript" src="assets/js/ion.rangeSlider.min.js"></script>
+    <!-- Isotope (masonry layouts and filtering) -->
+    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+    <!-- jarallax (parallax effect and video backgrounds) -->
+    <script type="text/javascript" src="assets/js/jarallax.min.js"></script>
+    <script type="text/javascript" src="assets/js/jarallax-video.min.js"></script>
+    <script type="text/javascript" src="assets/js/jarallax-element.min.js"></script>
+    <!-- jQuery Countdown (displays countdown text to a specified date) -->
+    <script type="text/javascript" src="assets/js/jquery.countdown.min.js"></script>
+    <!-- jQuery smartWizard facilitates steppable wizard content -->
+    <script type="text/javascript" src="assets/js/jquery.smartWizard.min.js"></script>
+    <!-- Plyr (unified player for Video, Audio, Vimeo and Youtube) -->
+    <script type="text/javascript" src="assets/js/plyr.polyfilled.min.js"></script>
+    <!-- Prism (displays formatted code boxes) -->
+    <script type="text/javascript" src="assets/js/prism.js"></script>
+    <!-- ScrollMonitor (manages events for elements scrolling in and out of view) -->
+    <script type="text/javascript" src="assets/js/scrollMonitor.js"></script>
+    <!-- Smooth scroll (animation to links in-page)-->
+    <script type="text/javascript" src="assets/js/smooth-scroll.polyfills.min.js"></script>
+    <!-- SVGInjector (replaces img tags with SVG code to allow easy inclusion of SVGs with the benefit of inheriting colors and styles)-->
+    <script type="text/javascript" src="assets/js/svg-injector.umd.production.js"></script>
+    <!-- TwitterFetcher (displays a feed of tweets from a specified account)-->
+    <script type="text/javascript" src="assets/js/twitterFetcher_min.js"></script>
+    <!-- Typed text (animated typing effect)-->
+    <script type="text/javascript" src="assets/js/typed.min.js"></script>
+    <!-- Required theme scripts (Do not remove) -->
+    <script type="text/javascript" src="assets/js/theme.js"></script>
+    <!-- Removes page load animation when window is finished loading -->
+    <script type="text/javascript">
+      window.addEventListener("load",function(){document.querySelector('body').classList.add('loaded');});
+    </script>
+
+    <script type="text/javascript">
+      // Insert the correct dev portal link based on environment.
+      let tValue =
+        (sourceEventProperties && sourceEventProperties.hasOwnProperty('t_code')) ?
+          sourceEventProperties['t_code'] : undefined
+
+      let tCodeArg = (tValue) ? `&t=${tValue}` : ''
+
+      const devSite = (isDevelopment) ?
+        `http://localhost:3000/?e=1&s=mkt_embed${tCodeArg}` :
+        `https://app.simpleid.xyz/?e=1&s=mkt_embed${tCodeArg}`
+      const iFrameHtml =
+        `<iframe frameborder="0" class="pt-1 d-flex flex-grow-1" style="min-width:290px; min-height:550px" src="${devSite}"></iframe>`
+
+      document.getElementById("devPortalIFrame").innerHTML = iFrameHtml
+    </script>
+
+  </body>
+
+</html>
