@@ -220,10 +220,6 @@
           </a>
           <div class="d-flex align-items-center order-lg-3">
             <a onclick="logButton('Growth Series')" href="web3growth/index.html" target="_blank" rel="noreferrer noopnener" class="btn btn-success ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3">Growth Handbook</a>
-            <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target=".navbar-collapse" data-toggle="collapse" type="button">
-              <img alt="Navbar Toggler Open Icon" class="navbar-toggler-open icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-menu.svg">
-              <img alt="Navbar Toggler Close Icon" class="navbar-toggler-close icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-x.svg">
-            </button>
             <a onclick="logButton('Header Start For Free')" href="#start" class="btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 d-none d-sm-block order-lg-3">Start For Free</a>
             <button aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target=".navbar-collapse" data-toggle="collapse" type="button">
               <img alt="Navbar Toggler Open Icon" class="navbar-toggler-open icon icon-sm" data-inject-svg src="assets/img/icons/interface/icon-menu.svg">
@@ -245,6 +241,26 @@
           </div>
         </div>
       </nav>
+    </div>
+
+    <div id="dimmer-div"></div>
+
+    <div id="banner-modal">
+      <div class="navbar-container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a onclick="closeModal()" class="close-button btn">Close</a>              
+        </nav>
+      </div>
+      <div style="margin-top: 45px;" class="row">
+        <div class="col-lg-6">
+          <h3><img src='./assets/img/logos/favicon.png' class="sid-icon" />Web3 Growth Series</h3>
+          <img src='./assets/img//illustrations/20.png' class="web3growth-modal-img" />
+        </div>
+        <div class="col-lg-6">
+          <p>We've launched a Web3 Growth Series to help founders building dApps learn from some of the biggest names in the space. You can view the highlights today. We'll be launching a full interview per day on our <a href="https://blog.simpleid.xyz" target="_blank">blog</a>. And on March 1st, we will launch the book.</p>
+          <a class="btn btn-primary" onclick="closeModal()" href="web3growth/index.html" target="_blank" rel="noreferrer noopnener">Check Out The Growth Series</a>
+        </div>
+      </div>
     </div>
 
     <section class="bg-light pb-0 o-hidden">
@@ -661,6 +677,24 @@
       //document.getElementById("devPortalIFrame").innerHTML = iFrameHtml
     </script>
     <script>
+      const MODAL_SEEN = "modal-seen-flag"
+      const modalSeen = JSON.parse(localStorage.getItem(MODAL_SEEN))
+      if(modalSeen) {
+        closeModal()
+      }
+      
+      function closeModal() {
+        localStorage.setItem(MODAL_SEEN, JSON.stringify(true))
+        const modal = document.getElementById('banner-modal')
+        const dimmer = document.getElementById('dimmer-div')
+        if(modal) {
+          modal.style.display = "none"
+        }
+        if(dimmer) {
+          dimmer.style.display = "none"
+        }
+      }
+
       function handleSolution(solution) {
         document.getElementById('feature-disc').style.display = "none";
         document.getElementById(solution).style.display = "block";
