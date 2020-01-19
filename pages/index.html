@@ -249,25 +249,25 @@
         <div class="modal-content">
           <div class="modal-header">
             <h2 class="modal-title" id="handbookModalCenterTitle">Web3 Growth Handbook</h2>
-            <button onclick="closeModal(event)" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <!-- <button onclick="closeModal(event)" type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
-            </button>
+            </button> -->
           </div>
           <div class="modal-body">
             <div class="row">
-              <div class="text-center col-lg-7">
+              <div class="text-center col-lg-6">
                 <!-- <h3>Web3 Growth Handbook</h3> -->
                 <img src='./assets/img/illustrations/07.png' class="web3growth-modal-img" />
               </div>
-              <div class="col-lg-5" style="margin-top: 2rem;">
-                <p class="lead">We're launching a Web3 Growth Handbook to help founders building Web3 apps learn from some of the biggest names in the space. You can view the highlights today. We'll be launching a full interview per day on our blog. And on March 1st, we will launch the book.</p>
+              <div class="col-lg-6" style="margin-top: 2rem;">
+                <p class="lead" style="font-weight: 800;">We're launching a <a class=onclick="logButton('Growth Series')" href="web3growth/index.html" target="_blank" rel="noreferrer noopnener"><mark>Web3 Growth Handbook</mark></a> to help founders building Web3 apps learn from some of the biggest names in the space. You can view the highlights today, and we'll be launching a full interview everyday.</p>
                 <!-- <a onclick="logButton('Growth Series')" href="web3growth/index.html" target="_blank" rel="noreferrer noopnener">Growth Handbook</a> -->
               </div>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" onclick="closeModal(event)" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary"><a class="text-white" onclick="logButton('Growth Series')" href="web3growth/index.html" target="_blank" rel="noreferrer noopnener">Read Highlights</a></button>
+            <button type="button" class="btn btn-primary"><a class="text-white" onclick="logButton('Growth Series'); closeModal(event)" href="web3growth/index.html" target="_blank" rel="noreferrer noopnener">Read Highlights</a></button>
           </div>
         </div>
       </div>
@@ -388,7 +388,7 @@
             </div>
           </div>
           <div class="row text-center justify-content-center" style="position: relative; padding-bottom: 62.5%; height: 0;">
-            <iframe src="https://www.loom.com/embed/3a3c2626ddce462c8f22aa71c409fe2f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+            <iframe src="https://www.youtube.com/embed/DrrXL2zSijU" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
             </iframe>
           </div>
         </div>
@@ -726,7 +726,7 @@
 
       }
     </script>
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       const savingsTable = {
         "75": "$15,150.00",
         "90": "$18,180.00",
@@ -753,7 +753,7 @@
         rate = dataSlider.value;
         document.getElementById('savings').innerText = savingsTable[rate];
       }
-    </script>
+    </script> -->
 
     <script>
       const MODAL_SEEN = "modal-seen-flag"
