@@ -243,12 +243,13 @@
       </nav>
     </div>
 
+    <div id="dimmer-div"></div>
     <div class="modal fade show" style="display: block;" id="handbookModalCenter" tabindex="-1" role="dialog" aria-labelledby="handbookModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h2 class="modal-title" id="handbookModalCenterTitle">Web3 Growth Handbook</h2>
-            <button onclick="closeModal()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button onclick="closeModal(event)" type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -265,7 +266,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" onclick="closeModal()" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" onclick="closeModal(event)" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary"><a class="text-white" onclick="logButton('Growth Series')" href="web3growth/index.html" target="_blank" rel="noreferrer noopnener">Read Highlights</a></button>
           </div>
         </div>
@@ -751,6 +752,26 @@
         console.log(dataSlider.value);
         rate = dataSlider.value;
         document.getElementById('savings').innerText = savingsTable[rate];
+      }
+    </script>
+
+    <script>
+      const MODAL_SEEN = "modal-seen-flag"
+      const modalSeen = JSON.parse(localStorage.getItem(MODAL_SEEN))
+      if(modalSeen) {
+        closeModal()
+      }
+
+      function closeModal() {
+        localStorage.setItem(MODAL_SEEN, JSON.stringify(true))
+        const modal = document.getElementById('handbookModalCenter')
+        const dimmer = document.getElementById('dimmer-div')
+        if(modal) {
+          modal.style.display = "none"
+        }
+        if(dimmer) {
+          dimmer.style.display = "none"
+        }
       }
     </script>
     <script>
