@@ -235,7 +235,7 @@
                 <a onclick="logButton('Header Blog')" aria-expanded="false" aria-haspopup="true" class="nav-link nav-item" href="https://blog.simpleid.xyz" target="_blank" rel="no-referrer no-opener" role="button">Blog</a>
               </li>
               <li class="nav-item">
-                <a onclick="logButton('Growth Series')" href="web3growth/index.html" target="_blank" rel="noreferrer noopnener" class="btn btn-success ml-lg-4 mr-3 mr-md-4 mr-lg-0 order-lg-3">Growth Handbook</a>
+                <button type="button" class="btn btn-success ml-lg-4 mr-3 mr-md-4 mr-lg-0 order-lg-3" data-toggle="modal" data-target="#demoModal">Request Demo</button>
               </li>
               <li class="nav-item">
                 <a onclick="logButton('Header Start For Free')" href="https://app.simpleid.xyz" target="_blank" class="btn btn-primary ml-lg-4 mr-3 mr-md-4 mr-lg-0 order-lg-3">Start For Free</a>
@@ -244,6 +244,51 @@
           </div>
         </div>
       </nav>
+    </div>
+
+    <div class="modal fade" id="demoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Request Demo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div style="display: none" id="loader" class="loader">
+              <div class="loading-animation"></div>
+            </div>
+            <div style="display: none;" id="demo-form-success">
+              <div class="alert alert-primary" role="alert">
+                Thanks! Someone from our team will reach out shortly.
+              </div>
+            </div>
+            <div id="demo-form-body">
+              <form onsubmit="return handleDemoRequest(event)">
+                <div class="form-group">
+                  <label for="demo-name">Your Name</label>
+                  <input type="text" class="form-control" id="demo-name" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                  <label for="demo-org-name">Company Name</label>
+                  <input type="text" class="form-control" id="demo-org-name" required placeholder="Your company name">
+                </div>
+                <div class="form-group">
+                  <label for="demo-email">Email address</label>
+                  <input type="email" class="form-control" id="demo-email" aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>                
+                <div class="form-group">
+                  <label for="demo-message">Message - Let us know more about your request</label>
+                  <textarea class="form-control" id="demo-message" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>  
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- <div id="dimmer-div"></div>
@@ -798,6 +843,47 @@
         `<iframe frameborder="0" class="pt-1 d-flex flex-grow-1" style="min-width:290px; min-height:550px" src="${devSite}"></iframe>`
 
       //document.getElementById("devPortalIFrame").innerHTML = iFrameHtml
+    </script>
+    <script>
+      function handleDemoRequest(event) {
+        event.preventDefault(); 
+        try {
+          let name = document.getElementById('demo-name')
+          let orgName = document.getElementById('demo-org-name')
+          let email = document.getElementById('demo-email')
+          let message = document.getElementById('demo-message')
+          const payload = {name: name.value, orgName: orgName.value, email: email.value, message: message.value}
+          const formBody = document.getElementById('demo-form-body')
+          const demoFormLoader = document.getElementById('loader')
+          
+          formBody.style.display = "none"
+          demoFormLoader.style.display = "block"
+
+          fetch('https://hooks.zapier.com/hooks/catch/2565501/o1dwrp6/', {
+            method: 'post',
+            body: JSON.stringify(payload)
+          }).then(function(response) {
+            return response.json();
+          }).then(function(data) {
+            if(data.status === "success") {
+              demoFormLoader.style.display = "none"
+              name.value = ""
+              orgName.value = ""
+              email.value = ""
+              message.value = ""
+              const formBodySuccess = document.getElementById('demo-form-success')
+              formBodySuccess.style.display = "block"
+            }
+          }).catch(e => {
+            formBody.style.display = "block"
+            demoFormLoader.style.display = "none"
+            throw new Error(e)
+          })
+        } catch (e) {
+          throw new Error(e.message);
+        }
+        return false
+      }
     </script>
     <script>
       function handleSolution(solution) {
