@@ -79,7 +79,7 @@
               </p>
               <div class="mt-4 mt-md-5">
                 <div id="sign-up-form-1">
-                  <form onsubmit="submitForApiKey(event)" class="d-flex flex-column flex-md-row">
+                  <form onsubmit="getBookZap(event)" class="d-flex flex-column flex-md-row">
                     <input id="email-1" class="form-control form-control-lg h-100" type="email" name="get-started-email" placeholder="Email Address">
                     <button class="btn btn-lg btn-primary mt-2 mt-md-0 ml-md-3 flex-shrink-0" type="submit">Get the Book</button>
                   </form>
@@ -357,7 +357,7 @@
         <div id="sign-up-form-3b" class="row justify-content-center">
           <div class="col-lg-8 col-md-9">
             <div>
-              <form onsubmit="submitForApiKey(event)" class="d-flex flex-column flex-md-row">
+              <form onsubmit="getBookZap(event)" class="d-flex flex-column flex-md-row">
                 <input id="email-3" class="form-control form-control-lg h-100" type="email" name="get-started-email" placeholder="Email Address">
                 <button class="btn btn-lg btn-primary mt-2 mt-md-0 ml-md-3 flex-shrink-0" type="submit">Get the Book</button>
               </form>
@@ -628,7 +628,7 @@
         <div id="sign-up-form-2b" class="row justify-content-center">
           <div class="col-lg-8 col-md-9">
             <div>
-              <form onsubmit="submitForApiKey(event)" class="d-flex flex-column flex-md-row">
+              <form onsubmit="getBookZap(event)" class="d-flex flex-column flex-md-row">
                 <input id="email-2" class="form-control form-control-lg h-100" type="email" name="get-started-email" placeholder="Email Address">
                 <button class="btn btn-lg btn-primary mt-2 mt-md-0 ml-md-3 flex-shrink-0" type="submit">Get the Book</button>
               </form>
@@ -847,7 +847,7 @@
         <div id="sign-up-form-4b" class="row justify-content-center">
           <div class="col-lg-8 col-md-9">
             <div>
-              <form onsubmit="submitForApiKey(event)" class="d-flex flex-column flex-md-row">
+              <form onsubmit="getBookZap(event)" class="d-flex flex-column flex-md-row">
                 <input id="email-4" class="form-control form-control-lg h-100" type="email" name="get-started-email" placeholder="Email Address">
                 <button class="btn btn-lg btn-primary mt-2 mt-md-0 ml-md-3 flex-shrink-0" type="submit">Get the Book</button>
               </form>
@@ -893,7 +893,7 @@
     <!-- <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script> -->
 
     <script>
-      function submitForApiKey(event) {
+      function getBookZap(event) {
         event.preventDefault();
         let email;
         if(document.getElementById('email-1').value.length > 0) {
@@ -930,7 +930,7 @@
         document.getElementById('sign-up-confirm-2').style.display = "block";
         document.getElementById('sign-up-confirm-3').style.display = "block";
         document.getElementById('sign-up-confirm-4').style.display = "block";
-        fetch('https://hooks.zapier.com/hooks/catch/2565501/ohta6dw/', {
+        fetch('https://hooks.zapier.com/hooks/catch/5618355/oswroqc/', {
           method: 'post',
           body: JSON.stringify(payload)
         }).then(function(response) {
