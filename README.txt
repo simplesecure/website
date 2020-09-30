@@ -1,6 +1,6 @@
 # README #
 
-Site uses a template called Jumpstart. Here are the basics: 
+Site uses a template called Jumpstart. Here are the some of the basics: 
 
 Jumpstart - SaaS, App and Software Landing page UI Kit by Medium Rare
 
